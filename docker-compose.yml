@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nmea-router:
+    build: .
+    ports:
+      - "8080:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - CONFIG_DIR=/app/data
+    restart: unless-stopped

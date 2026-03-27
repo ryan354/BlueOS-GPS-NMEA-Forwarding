@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMEA Router</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --border-light: #484f58;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --success: #3fb950;
+    --error: #f85149;
+    --warning: #d29922;
+    --nmea-gga: #79c0ff;
+    --nmea-zda: #d2a8ff;
+    --shadow: 0 3px 12px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* ── Header ── */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.header-icon {
+    font-size: 28px;
+    color: var(--accent);
+}
+.header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+.header-subtitle {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+.connection-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    background: var(--bg-tertiary);
+}
+.connection-badge .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--error);
+    transition: background 0.3s;
+}
+.connection-badge.connected .dot {
+    background: var(--success);
+    box-shadow: 0 0 8px rgba(63,185,80,0.5);
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+    display: grid;
+    gap: 20px;
+}
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+@media (max-width: 900px) {
+    .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ── Card ── */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.card-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-tertiary);
+}
+.card-header h2 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.card-header h2 .mdi {
+    font-size: 18px;
+    color: var(--accent);
+}
+.card-body {
+    padding: 20px;
+}
+
+/* ── GPS Status ── */
+.gps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+}
+.gps-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.gps-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+}
+.gps-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+.gps-value.fix-good { color: var(--success); }
+.gps-value.fix-bad { color: var(--error); }
+.gps-unit {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-left: 4px;
+}
+
+/* ── NMEA Monitor ── */
+.nmea-monitor {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    height: 260px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+.nmea-monitor::-webkit-scrollbar { width: 6px; }
+.nmea-monitor::-webkit-scrollbar-track { background: transparent; }
+.nmea-monitor::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+.nmea-line { white-space: nowrap; }
+.nmea-line.gga { color: var(--nmea-gga); }
+.nmea-line.zda { color: var(--nmea-zda); }
+.nmea-line .ts {
+    color: var(--text-muted);
+    margin-right: 8px;
+    font-size: 11px;
+}
+.nmea-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+.nmea-legend span::before {
+    content: '';
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.nmea-legend .leg-gga::before { background: var(--nmea-gga); }
+.nmea-legend .leg-zda::before { background: var(--nmea-zda); }
+
+/* ── Outputs ── */
+.output-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.output-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    gap: 12px;
+    transition: border-color 0.2s;
+}
+.output-item:hover { border-color: var(--border-light); }
+.output-item.disabled { opacity: 0.5; }
+.output-proto {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.output-proto.udp { background: rgba(88,166,255,0.15); color: var(--accent); }
+.output-proto.tcp { background: rgba(210,168,255,0.15); color: var(--nmea-zda); }
+.output-info { flex: 1; }
+.output-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+.output-addr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+.output-stats {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+.output-stats .err { color: var(--error); }
+.output-status-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.output-status-dot.ok { background: var(--success); }
+.output-status-dot.err { background: var(--error); }
+.output-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+/* ── Toggle Switch ── */
+.toggle {
+    position: relative;
+    width: 38px; height: 20px;
+    cursor: pointer;
+}
+.toggle input { display: none; }
+.toggle .slider {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.toggle .slider::before {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    left: 2px; top: 2px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    transition: 0.2s;
+}
+.toggle input:checked + .slider {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+.toggle input:checked + .slider::before {
+    transform: translateX(18px);
+    background: white;
+}
+
+/* ── Buttons ── */
+.btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+}
+.btn:hover { border-color: var(--border-light); background: var(--border); }
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-danger {
+    color: var(--error);
+}
+.btn-danger:hover { background: rgba(248,81,73,0.15); }
+.btn-icon {
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.btn-icon:hover { color: var(--text-primary); background: var(--bg-tertiary); }
+.btn-icon.delete:hover { color: var(--error); }
+
+/* ── Add Output Form ── */
+.add-form {
+    display: none;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-primary);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.add-form.visible { display: grid; grid-template-columns: 1fr 1fr; }
+.add-form .full-width { grid-column: 1 / -1; }
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.form-group label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+.form-group input, .form-group select {
+    padding: 8px 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+}
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--accent);
+}
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+/* ── Poll Rate ── */
+.poll-rate-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.poll-rate-control input {
+    width: 60px;
+    padding: 4px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-align: center;
+    outline: none;
+}
+.poll-rate-control input:focus { border-color: var(--accent); }
+
+/* ── Empty State ── */
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+}
+.empty-state .mdi {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+    color: var(--border-light);
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="header-left">
+        <span class="mdi mdi-satellite-variant header-icon"></span>
+        <div>
+            <h1>NMEA Router</h1>
+            <div class="header-subtitle">MAVLink GPS to NMEA Forwarder</div>
+        </div>
+    </div>
+    <div id="connBadge" class="connection-badge">
+        <span class="dot"></span>
+        <span id="connText">Disconnected</span>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+
+    <!-- GPS Status Card -->
+    <div class="card">
+        <div class="card-header">
+            <h2><span class="mdi mdi-crosshairs-gps"></span> GPS Input Status</h2>
+            <div id="fixBadge" style="font-size:12px; font-weight:600; color:var(--error);">NO FIX</div>
+        </div>
+        <div class="card-body">
+            <div class="gps-grid">
+                <div class="gps-item">
+                    <span class="gps-label">Latitude</span>
+                    <span class="gps-value" id="gpsLat">--</span>
+                </div>
+                <div class="gps-item">
+                    <span class="gps-label">Longitude</span>
+                    <span class="gps-value" id="gpsLon">--</span>
+                </div>
+                <div class="gps-item">
+                    <span class="gps-label">Altitude</span>
+                    <span class="gps-value" id="gpsAlt">--<span class="gps-unit">m</span></span>
+                </div>
+                <div class="gps-item">
+                    <span class="gps-label">Satellites</span>
+                    <span class="gps-value" id="gpsSats">--</span>
+                </div>
+                <div class="gps-item">
+                    <span class="gps-label">HDOP</span>
+                    <span class="gps-value" id="gpsHdop">--</span>
+                </div>
+                <div class="gps-item">
+                    <span class="gps-label">Speed</span>
+                    <span class="gps-value" id="gpsSpeed">--<span class="gps-unit">m/s</span></span>
+                </div>
+                <div class="gps-item">
+                    <span class="gps-label">Course</span>
+                    <span class="gps-value" id="gpsCourse">--<span class="gps-unit">deg</span></span>
+                </div>
+                <div class="gps-item">
+                    <span class="gps-label">Fix Type</span>
+                    <span class="gps-value" id="gpsFixType">--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NMEA Monitor + Outputs Grid -->
+    <div class="grid-2">
+
+        <!-- NMEA Monitor -->
+        <div class="card">
+            <div class="card-header">
+                <h2><span class="mdi mdi-console"></span> NMEA Monitor</h2>
+                <button class="btn-icon" onclick="clearMonitor()" title="Clear"><span class="mdi mdi-delete-outline"></span></button>
+            </div>
+            <div class="card-body">
+                <div class="nmea-monitor" id="nmeaMonitor"></div>
+                <div class="nmea-legend">
+                    <span class="leg-gga">GPGGA</span>
+                    <span class="leg-zda">GPZDA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Output Destinations -->
+        <div class="card">
+            <div class="card-header">
+                <h2><span class="mdi mdi-lan-connect"></span> Output Destinations</h2>
+                <div style="display:flex; gap:12px; align-items:center;">
+                    <div class="poll-rate-control">
+                        <span class="mdi mdi-timer-outline"></span>
+                        <input type="number" id="pollRate" value="1.0" min="0.1" max="10" step="0.1" title="Poll rate (Hz)">
+                        <span>Hz</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="toggleAddForm()">
+                        <span class="mdi mdi-plus"></span> Add
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- Add Output Form -->
+                <div class="add-form" id="addForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="formName" placeholder="e.g. Chart Plotter" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Protocol</label>
+                        <select id="formProto">
+                            <option value="udp">UDP</option>
+                            <option value="tcp">TCP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Host</label>
+                        <input type="text" id="formHost" placeholder="192.168.1.100" value="127.0.0.1">
+                    </div>
+                    <div class="form-group">
+                        <label>Port</label>
+                        <input type="number" id="formPort" placeholder="10110" value="10110" min="1" max="65535">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn" onclick="toggleAddForm()">Cancel</button>
+                        <button class="btn btn-primary" onclick="addOutput()">
+                            <span class="mdi mdi-check"></span> Add Output
+                        </button>
+                    </div>
+                </div>
+
+                <div class="output-list" id="outputList">
+                    <div class="empty-state" id="emptyOutputs">
+                        <span class="mdi mdi-lan-disconnect"></span>
+                        No outputs configured.<br>Click "Add" to create one.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Use relative paths so it works inside BlueOS iframes and direct access
+const API_BASE = './api/v1';
+const WS_URL = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/api/v1/ws`;
+
+let ws = null;
+let nmeaLines = [];
+const MAX_LINES = 200;
+let autoScroll = true;
+let reconnectTimer = null;
+
+// ── WebSocket ──
+function connectWs() {
+    if (ws && ws.readyState <= 1) return;
+    ws = new WebSocket(WS_URL);
+
+    ws.onopen = () => {
+        updateConnectionBadge(true, 'WebSocket Connected');
+        if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
+    };
+
+    ws.onmessage = (evt) => {
+        const data = JSON.parse(evt.data);
+        if (data.type === 'init' || data.type === 'update') {
+            updateGpsStatus(data.gps);
+            updateOutputs(data.outputs);
+            if (data.poll_rate_hz != null) {
+                document.getElementById('pollRate').value = data.poll_rate_hz;
+            }
+        }
+        if (data.type === 'update' && data.nmea) {
+            appendNmea(data.nmea.gpgga, 'gga');
+            appendNmea(data.nmea.gpzda, 'zda');
+        }
+        if (data.type === 'outputs_update') {
+            updateOutputs(data.outputs);
+        }
+    };
+
+    ws.onclose = () => {
+        updateConnectionBadge(false, 'Reconnecting...');
+        reconnectTimer = setTimeout(connectWs, 2000);
+    };
+
+    ws.onerror = () => {
+        ws.close();
+    };
+}
+
+function updateConnectionBadge(connected, text) {
+    const badge = document.getElementById('connBadge');
+    const txt = document.getElementById('connText');
+    badge.className = 'connection-badge' + (connected ? ' connected' : '');
+    txt.textContent = text;
+}
+
+// ── GPS Status ──
+function updateGpsStatus(gps) {
+    if (!gps) return;
+
+    const connected = gps.connected;
+    const fixOk = gps.fix_type >= 2;
+
+    updateConnectionBadge(connected, connected ? 'Connected to MAVLink' : (gps.error || 'Disconnected'));
+
+    const fixBadge = document.getElementById('fixBadge');
+    fixBadge.textContent = gps.fix_type_name || 'Unknown';
+    fixBadge.style.color = fixOk ? 'var(--success)' : 'var(--error)';
+
+    const fmt = (v, d=6) => typeof v === 'number' ? v.toFixed(d) : '--';
+    document.getElementById('gpsLat').textContent = fmt(gps.lat, 7);
+    document.getElementById('gpsLon').textContent = fmt(gps.lon, 7);
+    document.getElementById('gpsAlt').innerHTML = fmt(gps.alt, 1) + '<span class="gps-unit">m</span>';
+    document.getElementById('gpsSats').textContent = gps.satellites ?? '--';
+    document.getElementById('gpsHdop').textContent = fmt(gps.hdop, 1);
+    document.getElementById('gpsSpeed').innerHTML = fmt(gps.speed, 2) + '<span class="gps-unit">m/s</span>';
+    document.getElementById('gpsCourse').innerHTML = fmt(gps.course, 1) + '<span class="gps-unit">deg</span>';
+    document.getElementById('gpsFixType').textContent = gps.fix_type_name || '--';
+    document.getElementById('gpsFixType').className = 'gps-value ' + (fixOk ? 'fix-good' : 'fix-bad');
+}
+
+// ── NMEA Monitor ──
+function appendNmea(sentence, type) {
+    if (!sentence) return;
+    const now = new Date().toLocaleTimeString('en-GB', { hour12: false });
+    nmeaLines.push({ ts: now, sentence, type });
+    if (nmeaLines.length > MAX_LINES) nmeaLines.shift();
+    renderNmea();
+}
+
+function renderNmea() {
+    const el = document.getElementById('nmeaMonitor');
+    const wasAtBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 20;
+    el.innerHTML = nmeaLines.map(l =>
+        `<div class="nmea-line ${l.type}"><span class="ts">${l.ts}</span>${escHtml(l.sentence)}</div>`
+    ).join('');
+    if (wasAtBottom) el.scrollTop = el.scrollHeight;
+}
+
+function clearMonitor() {
+    nmeaLines = [];
+    document.getElementById('nmeaMonitor').innerHTML = '';
+}
+
+function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── Outputs ──
+function updateOutputs(outputs) {
+    if (!outputs) return;
+    const list = document.getElementById('outputList');
+    const empty = document.getElementById('emptyOutputs');
+
+    if (outputs.length === 0) {
+        list.innerHTML = '';
+        list.appendChild(empty);
+        empty.style.display = '';
+        return;
+    }
+    empty.style.display = 'none';
+
+    list.innerHTML = outputs.map(o => `
+        <div class="output-item ${o.enabled ? '' : 'disabled'}">
+            <label class="toggle">
+                <input type="checkbox" ${o.enabled ? 'checked' : ''} onchange="toggleOutput('${o.id}', this.checked)">
+                <span class="slider"></span>
+            </label>
+            <span class="output-proto ${o.protocol}">${o.protocol}</span>
+            <div class="output-info">
+                <div class="output-name">${escHtml(o.name)}</div>
+                <div class="output-addr">${escHtml(o.host)}:${o.port}</div>
+                <div class="output-stats">
+                    <span>Sent: ${o.sentences_sent}</span>
+                    <span class="${o.errors > 0 ? 'err' : ''}">Errors: ${o.errors}</span>
+                </div>
+            </div>
+            <span class="output-status-dot ${o.connected ? 'ok' : 'err'}" title="${o.connected ? 'Connected' : 'Disconnected'}"></span>
+            <button class="btn-icon delete" onclick="removeOutput('${o.id}')" title="Remove">
+                <span class="mdi mdi-close-circle-outline"></span>
+            </button>
+        </div>
+    `).join('');
+}
+
+// ── Fetch status directly (fallback when WS is not delivering updates) ──
+async function refreshStatus() {
+    try {
+        const resp = await fetch(`${API_BASE}/status`);
+        if (resp.ok) {
+            const data = await resp.json();
+            updateGpsStatus(data.gps);
+            updateOutputs(data.outputs);
+            if (data.poll_rate_hz != null) {
+                document.getElementById('pollRate').value = data.poll_rate_hz;
+            }
+        }
+    } catch (e) {
+        console.warn('Failed to refresh status:', e);
+    }
+}
+
+// ── API Actions ──
+async function addOutput() {
+    const name = document.getElementById('formName').value || 'Untitled';
+    const protocol = document.getElementById('formProto').value;
+    const host = document.getElementById('formHost').value || '127.0.0.1';
+    const port = parseInt(document.getElementById('formPort').value) || 10110;
+
+    try {
+        const resp = await fetch(`${API_BASE}/outputs`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, protocol, host, port, enabled: true })
+        });
+        if (!resp.ok) {
+            alert('Failed to add output: ' + resp.statusText);
+            return;
+        }
+        toggleAddForm();
+        document.getElementById('formName').value = '';
+        // Refresh output list directly in case WebSocket hasn't pushed update yet
+        await refreshStatus();
+    } catch (e) {
+        alert('Error adding output: ' + e.message);
+    }
+}
+
+async function removeOutput(id) {
+    try {
+        await fetch(`${API_BASE}/outputs/${id}`, { method: 'DELETE' });
+        await refreshStatus();
+    } catch (e) {
+        console.warn('Failed to remove output:', e);
+    }
+}
+
+async function toggleOutput(id, enabled) {
+    try {
+        await fetch(`${API_BASE}/outputs/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ enabled })
+        });
+        await refreshStatus();
+    } catch (e) {
+        console.warn('Failed to toggle output:', e);
+    }
+}
+
+function toggleAddForm() {
+    const form = document.getElementById('addForm');
+    form.classList.toggle('visible');
+}
+
+// Poll rate change
+let pollRateDebounce = null;
+document.getElementById('pollRate').addEventListener('input', (e) => {
+    clearTimeout(pollRateDebounce);
+    pollRateDebounce = setTimeout(async () => {
+        const hz = parseFloat(e.target.value);
+        if (hz >= 0.1 && hz <= 10) {
+            await fetch(`${API_BASE}/poll_rate`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ hz })
+            });
+        }
+    }, 500);
+});
+
+// ── Init ──
+connectWs();
+</script>
+</body>
+</html>
