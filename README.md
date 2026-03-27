@@ -18,9 +18,9 @@ A BlueOS extension that converts MAVLink GPS data (GPS_RAW_INT) to NMEA sentence
 1. Go to **Extensions Manager** in BlueOS
 2. Click the **Installed** tab, then the **+** icon
 3. Fill in:
-   - **Extension Identifier**: `ryaan354.nmea-router`
-   - **Extension Name**: `NMEA Router`
-   - **Docker image**: `ryaan354/blueos-nmea-router`
+   - **Extension Identifier**: `ryaan354.blueos-nmea-forwarding`
+   - **Extension Name**: `NMEA GPS Forwarding`
+   - **Docker image**: `ryaan354/blueos-nmea-forwarding`
    - **Docker tag**: `latest`
    - **Custom settings**:
      ```json

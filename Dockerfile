@@ -33,8 +33,8 @@ LABEL authors='[{"name": "Rovostech", "email": "ryan354@gmail.com"}]'
 LABEL company='{"about": "Marine robotics solutions", "name": "Rovostech", "email": "ryan354@gmail.com"}'
 LABEL type="device-integration"
 LABEL tags='["nmea", "gps", "mavlink", "navigation", "routing"]'
-LABEL readme="https://raw.githubusercontent.com/ryan354/blueos-nmea-router/{tag}/README.md"
-LABEL links='{"website": "https://github.com/ryan354/blueos-nmea-router", "support": "https://github.com/ryan354/blueos-nmea-router/issues"}'
+LABEL readme="https://raw.githubusercontent.com/ryan354/BlueOS-GPS-NMEA-Forwarding/{tag}/README.md"
+LABEL links='{"website": "https://github.com/ryan354/BlueOS-GPS-NMEA-Forwarding", "support": "https://github.com/ryan354/BlueOS-GPS-NMEA-Forwarding/issues"}'
 LABEL requirements='{"core": ">=1.1"}'
 
 ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]

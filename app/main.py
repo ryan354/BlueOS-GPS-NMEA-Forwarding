@@ -100,7 +100,7 @@ async def register_service():
         "company": "Rovostech",
         "version": "1.0.0",
         "new_page": False,
-        "webpage": "https://github.com/rovostech/blueos-nmea-router",
+        "webpage": "https://github.com/ryan354/BlueOS-GPS-NMEA-Forwarding",
         "api": "/docs",
     }
 
