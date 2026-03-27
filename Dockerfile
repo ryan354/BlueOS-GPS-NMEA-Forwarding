@@ -2,10 +2,10 @@ FROM python:3.11-slim-bookworm
 
 # Install dependencies
 RUN pip install --no-cache-dir \
-    fastapi==0.115.6 \
-    uvicorn[standard]==0.34.0 \
-    httpx==0.28.1 \
-    pydantic==2.10.4
+    fastapi \
+    uvicorn \
+    httpx \
+    pydantic
 
 COPY app /app
 WORKDIR /app
