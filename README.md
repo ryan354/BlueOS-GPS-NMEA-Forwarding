@@ -34,13 +34,66 @@ A BlueOS extension that converts MAVLink GPS data (GPS_RAW_INT) to NMEA sentence
      }
      ```
 
-## Local Development
+## Running the Service
+
+### Option 1: Docker Compose (Production-like)
+Runs the service in a Docker container, matching the deployed environment.
 
 ```bash
-docker compose up --build
+docker-compose up
 ```
 
-Open http://localhost:8080
+- Access UI at `http://localhost:8080`
+- Logs stream to terminal
+- Press `Ctrl+C` to stop
+
+For background mode:
+```bash
+docker-compose up -d
+docker-compose logs -f  # follow logs separately
+```
+
+### Option 2: Python Direct (Fastest Development)
+Runs the app locally without Docker. Changes reload automatically.
+
+```bash
+# Install dependencies (one-time)
+pip install fastapi uvicorn httpx pydantic
+
+# Run the app
+python app/main.py
+```
+
+- Access UI at `http://localhost:8000`
+- Code changes auto-reload (no rebuild needed)
+- Faster iteration for debugging
+
+### Option 3: VS Code Debugger
+Enable step-through debugging with breakpoints.
+
+Create `.vscode/launch.json`:
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: FastAPI",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/app/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
+```
+
+Press `F5` to start debugging. Set breakpoints in the code.
+
+**Which to use?**
+- **Option 2** during development (fastest feedback loop)
+- **Option 1** before pushing to verify container works
+- **Option 3** for step-through debugging
 
 ## Architecture
 
