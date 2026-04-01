@@ -584,7 +584,6 @@ function connectWs() {
     ws = new WebSocket(WS_URL);
 
     ws.onopen = () => {
-        updateConnectionBadge(true, 'WebSocket Connected');
         if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
     };
 
@@ -611,7 +610,6 @@ function connectWs() {
     };
 
     ws.onclose = () => {
-        updateConnectionBadge(false, 'Reconnecting...');
         reconnectTimer = setTimeout(connectWs, 2000);
     };
 
