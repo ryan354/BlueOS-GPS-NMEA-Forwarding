@@ -557,7 +557,7 @@ body {
                 </div>
 
                 <div class="output-list" id="outputList">
-                    <div class="empty-state" id="emptyOutputs">
+                    <div class="empty-state">
                         <span class="mdi mdi-lan-disconnect"></span>
                         No outputs configured.<br>Click "Add" to create one.
                     </div>
@@ -589,20 +589,24 @@ function connectWs() {
     };
 
     ws.onmessage = (evt) => {
-        const data = JSON.parse(evt.data);
-        if (data.type === 'init' || data.type === 'update') {
-            updateGpsStatus(data.gps);
-            updateOutputs(data.outputs);
-            if (data.poll_rate_hz != null) {
-                document.getElementById('pollRate').value = data.poll_rate_hz;
+        try {
+            const data = JSON.parse(evt.data);
+            if (data.type === 'init' || data.type === 'update') {
+                updateGpsStatus(data.gps);
+                updateOutputs(data.outputs);
+                if (data.poll_rate_hz != null) {
+                    document.getElementById('pollRate').value = data.poll_rate_hz;
+                }
             }
-        }
-        if (data.type === 'update' && data.nmea) {
-            appendNmea(data.nmea.gpgga, 'gga');
-            appendNmea(data.nmea.gpzda, 'zda');
-        }
-        if (data.type === 'outputs_update') {
-            updateOutputs(data.outputs);
+            if (data.type === 'update' && data.nmea) {
+                appendNmea(data.nmea.gpgga, 'gga');
+                appendNmea(data.nmea.gpzda, 'zda');
+            }
+            if (data.type === 'outputs_update') {
+                updateOutputs(data.outputs);
+            }
+        } catch (e) {
+            console.error('WebSocket message error:', e);
         }
     };
 
@@ -675,24 +679,27 @@ function escHtml(s) {
     return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
+function escAttr(s) {
+    return s.replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;');
+}
+
 // ── Outputs ──
 function updateOutputs(outputs) {
     if (!outputs) return;
     const list = document.getElementById('outputList');
-    const empty = document.getElementById('emptyOutputs');
 
     if (outputs.length === 0) {
-        list.innerHTML = '';
-        list.appendChild(empty);
-        empty.style.display = '';
+        list.innerHTML = '<div class="empty-state">' +
+            '<span class="mdi mdi-lan-disconnect"></span>' +
+            'No outputs configured.<br>Click "Add" to create one.' +
+            '</div>';
         return;
     }
-    empty.style.display = 'none';
 
     list.innerHTML = outputs.map(o => `
         <div class="output-item ${o.enabled ? '' : 'disabled'}">
             <label class="toggle">
-                <input type="checkbox" ${o.enabled ? 'checked' : ''} onchange="toggleOutput('${o.id}', this.checked)">
+                <input type="checkbox" ${o.enabled ? 'checked' : ''} onchange="toggleOutput('${escAttr(o.id)}', this.checked)">
                 <span class="slider"></span>
             </label>
             <span class="output-proto ${o.protocol}">${o.protocol}</span>
@@ -705,7 +712,7 @@ function updateOutputs(outputs) {
                 </div>
             </div>
             <span class="output-status-dot ${o.connected ? 'ok' : 'err'}" title="${o.connected ? 'Connected' : 'Disconnected'}"></span>
-            <button class="btn-icon delete" onclick="removeOutput('${o.id}')" title="Remove">
+            <button class="btn-icon delete" onclick="removeOutput('${escAttr(o.id)}')" title="Remove">
                 <span class="mdi mdi-close-circle-outline"></span>
             </button>
         </div>
@@ -720,6 +727,10 @@ async function refreshStatus() {
             const data = await resp.json();
             updateGpsStatus(data.gps);
             updateOutputs(data.outputs);
+            if (data.nmea) {
+                appendNmea(data.nmea.gpgga, 'gga');
+                appendNmea(data.nmea.gpzda, 'zda');
+            }
             if (data.poll_rate_hz != null) {
                 document.getElementById('pollRate').value = data.poll_rate_hz;
             }
@@ -800,6 +811,10 @@ document.getElementById('pollRate').addEventListener('input', (e) => {
 
 // ── Init ──
 connectWs();
+
+// Periodic REST polling fallback — keeps UI updated even if WebSocket
+// messages are delayed or the connection drops temporarily.
+setInterval(refreshStatus, 2000);
 </script>
 </body>
 </html>

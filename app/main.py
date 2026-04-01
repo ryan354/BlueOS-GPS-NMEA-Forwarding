@@ -111,6 +111,7 @@ async def register_service():
 async def get_status():
     return {
         "gps": reader.get_status(),
+        "nmea": {"gpgga": reader.latest_gpgga, "gpzda": reader.latest_gpzda},
         "outputs": forwarder.get_output_statuses(),
         "poll_rate_hz": reader.poll_rate_hz,
     }
