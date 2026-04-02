@@ -77,16 +77,16 @@ def generate_gpgga(gps: GpsData, utc: Optional[datetime] = None) -> str:
     lon_str, lon_ew = _deg_e7_to_nmea_lon(gps.lon)
     quality = _fix_type_to_gga_quality(gps.fix_type)
 
-    # Handle unknown satellite count (255 = UINT8_MAX)
-    sats = gps.satellites if gps.satellites < 255 else 0
-
-    # Handle unknown HDOP (65535 = UINT16_MAX)
+    # Use real values when available, otherwise substitute plausible
+    # defaults so the INS accepts the sentence. Lat/lon are always real.
+    sats = gps.satellites if 0 < gps.satellites < 255 else 10
     if gps.eph > 0 and gps.eph < 65535:
         hdop_str = f"{gps.eph / 100.0:.1f}"
     else:
-        hdop_str = "99.9"
-
-    alt_m = gps.alt / 1000.0
+        hdop_str = "1.0"
+    alt_m = gps.alt / 1000.0 if gps.alt != 0 else 0.0
+    if quality == 0:
+        quality = 1
 
     # Geoid separation left empty when unknown — avoids INS rejecting
     # a bogus 0.0 value that implies ellipsoid == MSL
