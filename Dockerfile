@@ -14,7 +14,7 @@ EXPOSE 80/tcp
 
 # ── BlueOS Extension Metadata ──
 
-LABEL version="2.0.0"
+LABEL version="3.0.0"
 
 LABEL permissions='{\
   "ExposedPorts": {\
