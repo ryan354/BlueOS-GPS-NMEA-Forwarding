@@ -13,8 +13,8 @@ class GpsData:
     alt: int           # mm (MSL)
     fix_type: int      # 0-6
     satellites: int
-    eph: int           # horizontal dilution in cm
-    epv: int           # vertical dilution in cm
+    eph: int           # HDOP * 100 (65535 = unknown)
+    epv: int           # VDOP * 100 (65535 = unknown)
     vel: int           # ground speed cm/s
     cog: int           # course over ground cdeg
     time_usec: int = 0
@@ -29,23 +29,23 @@ def _compute_checksum(body: str) -> str:
 
 
 def _deg_e7_to_nmea_lat(deg_e7: int) -> tuple[str, str]:
-    """Convert degE7 latitude to NMEA ddmm.mmmmm format and N/S indicator."""
+    """Convert degE7 latitude to NMEA ddmm.mmmm format and N/S indicator."""
     hemisphere = "N" if deg_e7 >= 0 else "S"
     deg_e7 = abs(deg_e7)
     degrees = deg_e7 // 10_000_000
     remainder = deg_e7 % 10_000_000
     minutes = remainder * 60.0 / 10_000_000
-    return f"{degrees:02d}{minutes:08.5f}", hemisphere
+    return f"{degrees:02d}{minutes:07.4f}", hemisphere
 
 
 def _deg_e7_to_nmea_lon(deg_e7: int) -> tuple[str, str]:
-    """Convert degE7 longitude to NMEA dddmm.mmmmm format and E/W indicator."""
+    """Convert degE7 longitude to NMEA dddmm.mmmm format and E/W indicator."""
     hemisphere = "E" if deg_e7 >= 0 else "W"
     deg_e7 = abs(deg_e7)
     degrees = deg_e7 // 10_000_000
     remainder = deg_e7 % 10_000_000
     minutes = remainder * 60.0 / 10_000_000
-    return f"{degrees:03d}{minutes:08.5f}", hemisphere
+    return f"{degrees:03d}{minutes:07.4f}", hemisphere
 
 
 def _fix_type_to_gga_quality(fix_type: int) -> int:
@@ -76,13 +76,23 @@ def generate_gpgga(gps: GpsData, utc: Optional[datetime] = None) -> str:
     lat_str, lat_ns = _deg_e7_to_nmea_lat(gps.lat)
     lon_str, lon_ew = _deg_e7_to_nmea_lon(gps.lon)
     quality = _fix_type_to_gga_quality(gps.fix_type)
-    sats = gps.satellites
-    hdop = gps.eph / 100.0 if gps.eph > 0 else 99.99
+
+    # Handle unknown satellite count (255 = UINT8_MAX)
+    sats = gps.satellites if gps.satellites < 255 else 0
+
+    # Handle unknown HDOP (65535 = UINT16_MAX)
+    if gps.eph > 0 and gps.eph < 65535:
+        hdop_str = f"{gps.eph / 100.0:.1f}"
+    else:
+        hdop_str = "99.9"
+
     alt_m = gps.alt / 1000.0
 
+    # Geoid separation left empty when unknown — avoids INS rejecting
+    # a bogus 0.0 value that implies ellipsoid == MSL
     body = (
         f"GPGGA,{time_str},{lat_str},{lat_ns},{lon_str},{lon_ew},"
-        f"{quality},{sats:02d},{hdop:.1f},{alt_m:.1f},M,0.0,M,,"
+        f"{quality},{sats:02d},{hdop_str},{alt_m:.1f},M,,M,,"
     )
     checksum = _compute_checksum(body)
     return f"${body}*{checksum}"

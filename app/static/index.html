@@ -521,6 +521,13 @@ body {
                         <input type="number" id="pollRate" value="5" min="1" max="20" step="1" title="Poll rate (Hz)">
                         <span>Hz</span>
                     </div>
+                    <div class="poll-rate-control" title="Enable/disable GPZDA sentence output">
+                        <span>GPZDA</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="gpzdaToggle" checked onchange="setGpzda(this.checked)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
                     <button class="btn btn-primary" onclick="toggleAddForm()">
                         <span class="mdi mdi-plus"></span> Add
                     </button>
@@ -594,8 +601,9 @@ function connectWs() {
                 updateGpsStatus(data.gps);
                 updateOutputs(data.outputs);
             }
-            if (data.type === 'init' && data.poll_rate_hz != null) {
-                document.getElementById('pollRate').value = data.poll_rate_hz;
+            if (data.type === 'init') {
+                if (data.poll_rate_hz != null) document.getElementById('pollRate').value = data.poll_rate_hz;
+                if (data.gpzda_enabled != null) document.getElementById('gpzdaToggle').checked = data.gpzda_enabled;
             }
             if (data.type === 'update' && data.nmea) {
                 appendNmea(data.nmea.gpgga, 'gga');
@@ -780,6 +788,18 @@ async function toggleOutput(id, enabled) {
         await refreshStatus();
     } catch (e) {
         console.warn('Failed to toggle output:', e);
+    }
+}
+
+async function setGpzda(enabled) {
+    try {
+        await fetch(`${API_BASE}/gpzda`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ enabled })
+        });
+    } catch (e) {
+        console.warn('Failed to set GPZDA:', e);
     }
 }
 

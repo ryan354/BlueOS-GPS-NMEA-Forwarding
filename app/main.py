@@ -45,7 +45,10 @@ ws_clients: Set[WebSocket] = set()
 async def on_gps_update(gps: GpsData, gpgga: str, gpzda: str):
     """Called by MavlinkReader on each GPS update."""
     # Forward to all outputs
-    await forwarder.broadcast([gpgga, gpzda])
+    sentences = [gpgga]
+    if config.gpzda_enabled:
+        sentences.append(gpzda)
+    await forwarder.broadcast(sentences)
 
     # Push to all WebSocket clients
     msg = {
@@ -114,6 +117,7 @@ async def get_status():
         "nmea": {"gpgga": reader.latest_gpgga, "gpzda": reader.latest_gpzda},
         "outputs": forwarder.get_output_statuses(),
         "poll_rate_hz": reader.poll_rate_hz,
+        "gpzda_enabled": config.gpzda_enabled,
     }
 
 
@@ -193,6 +197,17 @@ async def set_poll_rate(req: PollRateRequest):
     return {"poll_rate_hz": config.poll_rate_hz}
 
 
+class GpzdaRequest(BaseModel):
+    enabled: bool
+
+
+@app.put("/api/v1/gpzda")
+async def set_gpzda(req: GpzdaRequest):
+    config.gpzda_enabled = req.enabled
+    save_config(config)
+    return {"gpzda_enabled": config.gpzda_enabled}
+
+
 # ──────────────────── WebSocket ────────────────────
 
 @app.websocket("/api/v1/ws")
@@ -207,6 +222,7 @@ async def websocket_endpoint(ws: WebSocket):
             "gps": reader.get_status(),
             "outputs": forwarder.get_output_statuses(),
             "poll_rate_hz": reader.poll_rate_hz,
+            "gpzda_enabled": config.gpzda_enabled,
         })
         # Keep alive - wait for client disconnect
         while True:
