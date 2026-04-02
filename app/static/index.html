@@ -593,7 +593,7 @@ function connectWs() {
             if (data.type === 'init' || data.type === 'update') {
                 updateGpsStatus(data.gps);
                 updateOutputs(data.outputs);
-                if (data.poll_rate_hz != null) {
+                if (data.poll_rate_hz != null && !pollRateEditing) {
                     document.getElementById('pollRate').value = data.poll_rate_hz;
                 }
             }
@@ -793,7 +793,11 @@ function toggleAddForm() {
 
 // Poll rate change
 let pollRateDebounce = null;
-document.getElementById('pollRate').addEventListener('input', (e) => {
+let pollRateEditing = false;
+const pollRateInput = document.getElementById('pollRate');
+pollRateInput.addEventListener('focus', () => { pollRateEditing = true; });
+pollRateInput.addEventListener('blur', () => { pollRateEditing = false; });
+pollRateInput.addEventListener('input', (e) => {
     clearTimeout(pollRateDebounce);
     pollRateDebounce = setTimeout(async () => {
         const hz = parseFloat(e.target.value);
