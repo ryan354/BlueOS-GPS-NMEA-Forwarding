@@ -85,7 +85,7 @@ class MavlinkReader:
         logger.info("MavlinkReader stopped")
 
     def set_poll_rate(self, hz: float) -> None:
-        self.poll_rate_hz = max(0.1, min(hz, 10.0))
+        self.poll_rate_hz = max(1.0, min(hz, 20.0))
 
     def get_status(self) -> dict:
         gps = self.latest_gps

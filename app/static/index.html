@@ -518,7 +518,7 @@ body {
                 <div style="display:flex; gap:12px; align-items:center;">
                     <div class="poll-rate-control">
                         <span class="mdi mdi-timer-outline"></span>
-                        <input type="number" id="pollRate" value="1.0" min="0.1" max="10" step="0.1" title="Poll rate (Hz)">
+                        <input type="number" id="pollRate" value="20" min="1" max="20" step="1" title="Poll rate (Hz)">
                         <span>Hz</span>
                     </div>
                     <button class="btn btn-primary" onclick="toggleAddForm()">
@@ -593,9 +593,9 @@ function connectWs() {
             if (data.type === 'init' || data.type === 'update') {
                 updateGpsStatus(data.gps);
                 updateOutputs(data.outputs);
-                if (data.poll_rate_hz != null && !pollRateEditing) {
-                    document.getElementById('pollRate').value = data.poll_rate_hz;
-                }
+            }
+            if (data.type === 'init' && data.poll_rate_hz != null) {
+                document.getElementById('pollRate').value = data.poll_rate_hz;
             }
             if (data.type === 'update' && data.nmea) {
                 appendNmea(data.nmea.gpgga, 'gga');
@@ -729,9 +729,6 @@ async function refreshStatus() {
                 appendNmea(data.nmea.gpgga, 'gga');
                 appendNmea(data.nmea.gpzda, 'zda');
             }
-            if (data.poll_rate_hz != null) {
-                document.getElementById('pollRate').value = data.poll_rate_hz;
-            }
         }
     } catch (e) {
         console.warn('Failed to refresh status:', e);
@@ -793,15 +790,11 @@ function toggleAddForm() {
 
 // Poll rate change
 let pollRateDebounce = null;
-let pollRateEditing = false;
-const pollRateInput = document.getElementById('pollRate');
-pollRateInput.addEventListener('focus', () => { pollRateEditing = true; });
-pollRateInput.addEventListener('blur', () => { pollRateEditing = false; });
-pollRateInput.addEventListener('input', (e) => {
+document.getElementById('pollRate').addEventListener('input', (e) => {
     clearTimeout(pollRateDebounce);
     pollRateDebounce = setTimeout(async () => {
         const hz = parseFloat(e.target.value);
-        if (hz >= 0.1 && hz <= 10) {
+        if (hz >= 1 && hz <= 20) {
             await fetch(`${API_BASE}/poll_rate`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },

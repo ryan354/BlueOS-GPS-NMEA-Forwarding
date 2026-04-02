@@ -20,7 +20,7 @@ class OutputConfig(BaseModel):
 
 
 class AppConfig(BaseModel):
-    poll_rate_hz: float = 1.0
+    poll_rate_hz: float = 20.0
     mavlink_url: str = "http://host.docker.internal:6040"
     outputs: List[OutputConfig] = Field(default_factory=list)
 

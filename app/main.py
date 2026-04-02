@@ -187,7 +187,7 @@ class PollRateRequest(BaseModel):
 
 @app.put("/api/v1/poll_rate")
 async def set_poll_rate(req: PollRateRequest):
-    config.poll_rate_hz = max(0.1, min(req.hz, 10.0))
+    config.poll_rate_hz = max(1.0, min(req.hz, 20.0))
     reader.set_poll_rate(config.poll_rate_hz)
     save_config(config)
     return {"poll_rate_hz": config.poll_rate_hz}
