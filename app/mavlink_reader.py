@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import math
+import random
 from datetime import datetime, timezone
 from typing import Callable, Any, Optional, List
 
@@ -43,11 +45,12 @@ def _parse_fix_type(val: Any) -> int:
 
 
 class MavlinkReader:
-    def __init__(self, mavlink_url: str = "http://host.docker.internal:6040"):
+    def __init__(self, mavlink_url: str = "http://host.docker.internal:6040", dummy: bool = False):
         self.mavlink_url = mavlink_url.rstrip("/")
         self.endpoint = (
             f"{self.mavlink_url}/v1/mavlink/vehicles/1/components/1/messages/GPS_RAW_INT"
         )
+        self.dummy = dummy
         self.poll_rate_hz: float = 1.0
         self.latest_gps: Optional[GpsData] = None
         self.latest_gpgga: str = ""
@@ -117,27 +120,52 @@ class MavlinkReader:
             "error": None,
         }
 
+    def _generate_dummy_gps(self) -> GpsData:
+        """Generate simulated GPS data that drifts slowly."""
+        t = asyncio.get_event_loop().time()
+        # Simulate a slow circle around a base position
+        base_lat = -33.8688 * 1e7   # Sydney, Australia
+        base_lon = 151.2093 * 1e7
+        radius = 500 * 1e7 / 111139  # ~500m radius in degE7
+        lat = int(base_lat + radius * math.sin(t * 0.05))
+        lon = int(base_lon + radius * math.cos(t * 0.05))
+        alt = int((50.0 + 5.0 * math.sin(t * 0.1)) * 1000)  # ~50m altitude in mm
+        vel = int((1.5 + 0.5 * math.sin(t * 0.2)) * 100)    # ~1.5 m/s in cm/s
+        cog = int(((math.degrees(math.atan2(math.cos(t * 0.05), -math.sin(t * 0.05))) % 360) * 100))
+        return GpsData(
+            lat=lat, lon=lon, alt=alt,
+            fix_type=3,  # 3D Fix
+            satellites=random.randint(8, 14),
+            eph=random.randint(80, 150),
+            epv=random.randint(100, 200),
+            vel=vel, cog=cog,
+            time_usec=int(datetime.now(timezone.utc).timestamp() * 1e6),
+        )
+
     async def _poll_loop(self) -> None:
         backoff = 1.0
         while self._running:
             try:
-                resp = await self._client.get(self.endpoint)
-                resp.raise_for_status()
-                data = resp.json()
+                if self.dummy:
+                    gps = self._generate_dummy_gps()
+                else:
+                    resp = await self._client.get(self.endpoint)
+                    resp.raise_for_status()
+                    data = resp.json()
 
-                msg = data.get("message", data)
-                gps = GpsData(
-                    lat=msg.get("lat", 0),
-                    lon=msg.get("lon", 0),
-                    alt=msg.get("alt", 0),
-                    fix_type=_parse_fix_type(msg.get("fix_type", 0)),
-                    satellites=msg.get("satellites_visible", 0),
-                    eph=msg.get("eph", 0),
-                    epv=msg.get("epv", 0),
-                    vel=msg.get("vel", 0),
-                    cog=msg.get("cog", 0),
-                    time_usec=msg.get("time_usec", 0),
-                )
+                    msg = data.get("message", data)
+                    gps = GpsData(
+                        lat=msg.get("lat", 0),
+                        lon=msg.get("lon", 0),
+                        alt=msg.get("alt", 0),
+                        fix_type=_parse_fix_type(msg.get("fix_type", 0)),
+                        satellites=msg.get("satellites_visible", 0),
+                        eph=msg.get("eph", 0),
+                        epv=msg.get("epv", 0),
+                        vel=msg.get("vel", 0),
+                        cog=msg.get("cog", 0),
+                        time_usec=msg.get("time_usec", 0),
+                    )
 
                 self.latest_gps = gps
                 self.connected = True

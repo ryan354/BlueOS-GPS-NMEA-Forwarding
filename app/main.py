@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import os
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from typing import Literal, Optional, Set
@@ -72,7 +73,10 @@ async def lifespan(app: FastAPI):
     global config, reader, forwarder
     # Startup
     config = load_config()
-    reader = MavlinkReader(mavlink_url=config.mavlink_url)
+    dummy_mode = os.environ.get("DUMMY_GPS", "").lower() in ("1", "true", "yes")
+    reader = MavlinkReader(mavlink_url=config.mavlink_url, dummy=dummy_mode)
+    if dummy_mode:
+        logger.info("Running in DUMMY GPS mode (simulated data)")
     reader.add_callback(on_gps_update)
 
     for out in config.outputs:
