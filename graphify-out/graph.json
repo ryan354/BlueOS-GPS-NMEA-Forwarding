@@ -1,67 +1,7 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {
-    "hyperedges": [
-      {
-        "id": "data_pipeline",
-        "label": "MAVLink to NMEA Data Pipeline",
-        "nodes": [
-          "claudemd_mavlinkreader",
-          "claudemd_gpsdata",
-          "claudemd_gpgga",
-          "claudemd_gpzda",
-          "claudemd_nmeaforwarder"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "CLAUDE.md"
-      },
-      {
-        "id": "app_modules",
-        "label": "Application Module Set",
-        "nodes": [
-          "claudemd_main_py",
-          "claudemd_mavlink_reader_py",
-          "claudemd_nmea_py",
-          "claudemd_forwarder_py",
-          "claudemd_config_py",
-          "claudemd_index_html"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "CLAUDE.md"
-      },
-      {
-        "id": "runtime_dependencies",
-        "label": "Runtime Dependencies",
-        "nodes": [
-          "claudemd_fastapi",
-          "claudemd_httpx",
-          "claudemd_pydantic"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "CLAUDE.md"
-      },
-      {
-        "id": "protocol_handlers",
-        "label": "Protocol Handler Set",
-        "nodes": [
-          "claudemd_nmeaforwarder",
-          "claudemd_udphandler",
-          "claudemd_tcphandler"
-        ],
-        "relation": "implement",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "CLAUDE.md"
-      }
-    ]
-  },
+  "graph": {},
   "nodes": [
     {
       "label": "_graphify_obsidian.py",
@@ -69,7 +9,7 @@
       "source_file": "_graphify_obsidian.py",
       "source_location": "L1",
       "id": "graphify_obsidian_py",
-      "community": 10
+      "community": 6
     },
     {
       "label": "config.py",
@@ -77,7 +17,7 @@
       "source_file": "app\\config.py",
       "source_location": "L1",
       "id": "app_config_py",
-      "community": 6
+      "community": 5
     },
     {
       "label": "OutputConfig",
@@ -109,7 +49,7 @@
       "source_file": "app\\config.py",
       "source_location": "L33",
       "id": "config_load_config",
-      "community": 6
+      "community": 5
     },
     {
       "label": "save_config()",
@@ -117,7 +57,7 @@
       "source_file": "app\\config.py",
       "source_location": "L43",
       "id": "config_save_config",
-      "community": 6
+      "community": 5
     },
     {
       "label": "Configuration model and persistence for NMEA Router.",
@@ -125,7 +65,7 @@
       "source_file": "app\\config.py",
       "source_location": "L1",
       "id": "config_rationale_1",
-      "community": 6
+      "community": 5
     },
     {
       "label": "Load config from disk, or return defaults if not found.",
@@ -133,7 +73,7 @@
       "source_file": "app\\config.py",
       "source_location": "L34",
       "id": "config_rationale_34",
-      "community": 6
+      "community": 5
     },
     {
       "label": "Atomically save config to disk.",
@@ -141,7 +81,7 @@
       "source_file": "app\\config.py",
       "source_location": "L44",
       "id": "config_rationale_44",
-      "community": 6
+      "community": 5
     },
     {
       "label": "forwarder.py",
@@ -325,7 +265,7 @@
       "source_file": "app\\main.py",
       "source_location": "L1",
       "id": "app_main_py",
-      "community": 5
+      "community": 4
     },
     {
       "label": "broadcast_outputs_update()",
@@ -333,7 +273,7 @@
       "source_file": "app\\main.py",
       "source_location": "L25",
       "id": "main_broadcast_outputs_update",
-      "community": 5
+      "community": 4
     },
     {
       "label": "on_gps_update()",
@@ -341,7 +281,7 @@
       "source_file": "app\\main.py",
       "source_location": "L46",
       "id": "main_on_gps_update",
-      "community": 5
+      "community": 4
     },
     {
       "label": "lifespan()",
@@ -349,7 +289,7 @@
       "source_file": "app\\main.py",
       "source_location": "L72",
       "id": "main_lifespan",
-      "community": 5
+      "community": 4
     },
     {
       "label": "register_service()",
@@ -357,7 +297,7 @@
       "source_file": "app\\main.py",
       "source_location": "L102",
       "id": "main_register_service",
-      "community": 5
+      "community": 4
     },
     {
       "label": "get_status()",
@@ -365,7 +305,7 @@
       "source_file": "app\\main.py",
       "source_location": "L118",
       "id": "main_get_status",
-      "community": 5
+      "community": 4
     },
     {
       "label": "get_config()",
@@ -373,7 +313,7 @@
       "source_file": "app\\main.py",
       "source_location": "L129",
       "id": "main_get_config",
-      "community": 5
+      "community": 4
     },
     {
       "label": "AddOutputRequest",
@@ -389,7 +329,7 @@
       "source_file": "app\\main.py",
       "source_location": "L142",
       "id": "main_add_output",
-      "community": 5
+      "community": 4
     },
     {
       "label": "remove_output()",
@@ -397,7 +337,7 @@
       "source_file": "app\\main.py",
       "source_location": "L158",
       "id": "main_remove_output",
-      "community": 5
+      "community": 4
     },
     {
       "label": "UpdateOutputRequest",
@@ -413,7 +353,7 @@
       "source_file": "app\\main.py",
       "source_location": "L174",
       "id": "main_update_output",
-      "community": 5
+      "community": 4
     },
     {
       "label": "PollRateRequest",
@@ -429,7 +369,7 @@
       "source_file": "app\\main.py",
       "source_location": "L197",
       "id": "main_set_poll_rate",
-      "community": 5
+      "community": 4
     },
     {
       "label": "GpzdaRequest",
@@ -445,7 +385,7 @@
       "source_file": "app\\main.py",
       "source_location": "L209",
       "id": "main_set_gpzda",
-      "community": 5
+      "community": 4
     },
     {
       "label": "websocket_endpoint()",
@@ -453,7 +393,7 @@
       "source_file": "app\\main.py",
       "source_location": "L218",
       "id": "main_websocket_endpoint",
-      "community": 5
+      "community": 4
     },
     {
       "label": "BlueOS NMEA Router Extension - FastAPI Application.",
@@ -734,402 +674,6 @@
       "source_location": "L102",
       "id": "nmea_rationale_102",
       "community": 2
-    },
-    {
-      "label": "BlueOS NMEA Router Extension (README)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "line 1",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "readme_blueos_nmea_router",
-      "community": 11
-    },
-    {
-      "label": "Extension Identifier ryaan354.blueos-nmea-forwarding",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "line 21",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "readme_extension_identifier",
-      "community": 12
-    },
-    {
-      "label": "Docker Image ryaan354/blueos-nmea-forwarding",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "line 23",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "readme_docker_image",
-      "community": 13
-    },
-    {
-      "label": "Configurable Poll Rate (0.1-10 Hz)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "line 11",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "readme_poll_rate",
-      "community": 14
-    },
-    {
-      "label": "BlueOS NMEA Router Extension",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_blueos_nmea_router",
-      "community": 4
-    },
-    {
-      "label": "MAVLink Protocol",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_mavlink",
-      "community": 4
-    },
-    {
-      "label": "mavlink2rest Service",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_mavlink2rest",
-      "community": 4
-    },
-    {
-      "label": "NMEA 0183 Standard",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_nmea_0183",
-      "community": 4
-    },
-    {
-      "label": "GPGGA Sentence",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_gpgga",
-      "community": 4
-    },
-    {
-      "label": "GPZDA Sentence",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_gpzda",
-      "community": 4
-    },
-    {
-      "label": "main.py Module",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_main_py",
-      "community": 9
-    },
-    {
-      "label": "mavlink_reader.py Module",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_mavlink_reader_py",
-      "community": 4
-    },
-    {
-      "label": "nmea.py Module",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_nmea_py",
-      "community": 4
-    },
-    {
-      "label": "forwarder.py Module",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_forwarder_py",
-      "community": 8
-    },
-    {
-      "label": "config.py Module",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_config_py",
-      "community": 7
-    },
-    {
-      "label": "static/index.html Dashboard",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_index_html",
-      "community": 15
-    },
-    {
-      "label": "MavlinkReader Class",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_mavlinkreader",
-      "community": 4
-    },
-    {
-      "label": "GpsData Dataclass",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_gpsdata",
-      "community": 4
-    },
-    {
-      "label": "NmeaForwarder Class",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_nmeaforwarder",
-      "community": 8
-    },
-    {
-      "label": "UdpHandler Class",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_udphandler",
-      "community": 8
-    },
-    {
-      "label": "TcpHandler Class",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_tcphandler",
-      "community": 8
-    },
-    {
-      "label": "OutputConfig Model",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_outputconfig",
-      "community": 7
-    },
-    {
-      "label": "AppConfig Model",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_appconfig",
-      "community": 7
-    },
-    {
-      "label": "GPS_RAW_INT MAVLink Message",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_gps_raw_int",
-      "community": 4
-    },
-    {
-      "label": "FastAPI Framework",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Build & Run",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_fastapi",
-      "community": 9
-    },
-    {
-      "label": "httpx Library",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Build & Run",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_httpx",
-      "community": 4
-    },
-    {
-      "label": "Pydantic Library",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Build & Run",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_pydantic",
-      "community": 7
-    },
-    {
-      "label": "BlueOS Platform",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_blueos",
-      "community": 4
-    },
-    {
-      "label": "Callback System Pattern",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_callback_system",
-      "community": 4
-    },
-    {
-      "label": "Atomic Config Writes Pattern",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_atomic_config",
-      "community": 7
-    },
-    {
-      "label": "Rationale: Atomic Writes Prevent Corruption",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_rationale_atomic_writes",
-      "community": 7
-    },
-    {
-      "label": "Rationale: UDP is Fire-and-Forget",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_rationale_udp_fire_forget",
-      "community": 8
-    },
-    {
-      "label": "Rationale: TCP Persistent Connections with Retry",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "claudemd_rationale_tcp_retry",
-      "community": 8
     }
   ],
   "links": [
@@ -2992,449 +2536,7 @@
       "source": "nmea_generate_gpzda",
       "target": "nmea_rationale_102",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "weight": 1.0,
-      "_src": "claudemd_blueos_nmea_router",
-      "_tgt": "claudemd_mavlink",
-      "source": "claudemd_blueos_nmea_router",
-      "target": "claudemd_mavlink"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "weight": 1.0,
-      "_src": "claudemd_blueos_nmea_router",
-      "_tgt": "claudemd_nmea_0183",
-      "source": "claudemd_blueos_nmea_router",
-      "target": "claudemd_nmea_0183"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "weight": 1.0,
-      "_src": "claudemd_blueos_nmea_router",
-      "_tgt": "claudemd_blueos",
-      "source": "claudemd_blueos_nmea_router",
-      "target": "claudemd_blueos"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 0.8,
-      "_src": "claudemd_gps_raw_int",
-      "_tgt": "claudemd_mavlink",
-      "source": "claudemd_mavlink",
-      "target": "claudemd_gps_raw_int"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 0.8,
-      "_src": "claudemd_mavlink2rest",
-      "_tgt": "claudemd_mavlink",
-      "source": "claudemd_mavlink",
-      "target": "claudemd_mavlink2rest"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_mavlinkreader",
-      "_tgt": "claudemd_mavlink2rest",
-      "source": "claudemd_mavlink2rest",
-      "target": "claudemd_mavlinkreader"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "weight": 0.8,
-      "_src": "claudemd_gpgga",
-      "_tgt": "claudemd_nmea_0183",
-      "source": "claudemd_nmea_0183",
-      "target": "claudemd_gpgga"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "CLAUDE.md",
-      "source_location": "## What This Is",
-      "weight": 0.8,
-      "_src": "claudemd_gpzda",
-      "_tgt": "claudemd_nmea_0183",
-      "source": "claudemd_nmea_0183",
-      "target": "claudemd_gpzda"
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_gpsdata",
-      "_tgt": "claudemd_gpgga",
-      "source": "claudemd_gpgga",
-      "target": "claudemd_gpsdata"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_nmea_py",
-      "_tgt": "claudemd_gpgga",
-      "source": "claudemd_gpgga",
-      "target": "claudemd_nmea_py"
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_gpsdata",
-      "_tgt": "claudemd_gpzda",
-      "source": "claudemd_gpzda",
-      "target": "claudemd_gpsdata"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_nmea_py",
-      "_tgt": "claudemd_gpzda",
-      "source": "claudemd_gpzda",
-      "target": "claudemd_nmea_py"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_main_py",
-      "_tgt": "claudemd_fastapi",
-      "source": "claudemd_main_py",
-      "target": "claudemd_fastapi"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_mavlink_reader_py",
-      "_tgt": "claudemd_mavlinkreader",
-      "source": "claudemd_mavlink_reader_py",
-      "target": "claudemd_mavlinkreader"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_nmea_py",
-      "_tgt": "claudemd_gpsdata",
-      "source": "claudemd_nmea_py",
-      "target": "claudemd_gpsdata"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_forwarder_py",
-      "_tgt": "claudemd_nmeaforwarder",
-      "source": "claudemd_forwarder_py",
-      "target": "claudemd_nmeaforwarder"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_forwarder_py",
-      "_tgt": "claudemd_udphandler",
-      "source": "claudemd_forwarder_py",
-      "target": "claudemd_udphandler"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_forwarder_py",
-      "_tgt": "claudemd_tcphandler",
-      "source": "claudemd_forwarder_py",
-      "target": "claudemd_tcphandler"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_config_py",
-      "_tgt": "claudemd_outputconfig",
-      "source": "claudemd_config_py",
-      "target": "claudemd_outputconfig"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_config_py",
-      "_tgt": "claudemd_appconfig",
-      "source": "claudemd_config_py",
-      "target": "claudemd_appconfig"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_config_py",
-      "_tgt": "claudemd_pydantic",
-      "source": "claudemd_config_py",
-      "target": "claudemd_pydantic"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "weight": 1.0,
-      "_src": "claudemd_atomic_config",
-      "_tgt": "claudemd_config_py",
-      "source": "claudemd_config_py",
-      "target": "claudemd_atomic_config"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_mavlinkreader",
-      "_tgt": "claudemd_httpx",
-      "source": "claudemd_mavlinkreader",
-      "target": "claudemd_httpx"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 0.9,
-      "_src": "claudemd_mavlinkreader",
-      "_tgt": "claudemd_gps_raw_int",
-      "source": "claudemd_mavlinkreader",
-      "target": "claudemd_gps_raw_int"
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_mavlinkreader",
-      "_tgt": "claudemd_gpsdata",
-      "source": "claudemd_mavlinkreader",
-      "target": "claudemd_gpsdata"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "weight": 1.0,
-      "_src": "claudemd_callback_system",
-      "_tgt": "claudemd_mavlinkreader",
-      "source": "claudemd_mavlinkreader",
-      "target": "claudemd_callback_system"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_nmeaforwarder",
-      "_tgt": "claudemd_udphandler",
-      "source": "claudemd_nmeaforwarder",
-      "target": "claudemd_udphandler"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Architecture",
-      "weight": 1.0,
-      "_src": "claudemd_nmeaforwarder",
-      "_tgt": "claudemd_tcphandler",
-      "source": "claudemd_nmeaforwarder",
-      "target": "claudemd_tcphandler"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "weight": 0.9,
-      "_src": "claudemd_callback_system",
-      "_tgt": "claudemd_nmeaforwarder",
-      "source": "claudemd_nmeaforwarder",
-      "target": "claudemd_callback_system"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "weight": 1.0,
-      "_src": "claudemd_rationale_udp_fire_forget",
-      "_tgt": "claudemd_udphandler",
-      "source": "claudemd_udphandler",
-      "target": "claudemd_rationale_udp_fire_forget"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "weight": 1.0,
-      "_src": "claudemd_rationale_tcp_retry",
-      "_tgt": "claudemd_tcphandler",
-      "source": "claudemd_tcphandler",
-      "target": "claudemd_rationale_tcp_retry"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "## Key Patterns",
-      "weight": 1.0,
-      "_src": "claudemd_rationale_atomic_writes",
-      "_tgt": "claudemd_atomic_config",
-      "source": "claudemd_atomic_config",
-      "target": "claudemd_rationale_atomic_writes"
     }
   ],
-  "hyperedges": [
-    {
-      "id": "data_pipeline",
-      "label": "MAVLink to NMEA Data Pipeline",
-      "nodes": [
-        "claudemd_mavlinkreader",
-        "claudemd_gpsdata",
-        "claudemd_gpgga",
-        "claudemd_gpzda",
-        "claudemd_nmeaforwarder"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md"
-    },
-    {
-      "id": "app_modules",
-      "label": "Application Module Set",
-      "nodes": [
-        "claudemd_main_py",
-        "claudemd_mavlink_reader_py",
-        "claudemd_nmea_py",
-        "claudemd_forwarder_py",
-        "claudemd_config_py",
-        "claudemd_index_html"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md"
-    },
-    {
-      "id": "runtime_dependencies",
-      "label": "Runtime Dependencies",
-      "nodes": [
-        "claudemd_fastapi",
-        "claudemd_httpx",
-        "claudemd_pydantic"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md"
-    },
-    {
-      "id": "protocol_handlers",
-      "label": "Protocol Handler Set",
-      "nodes": [
-        "claudemd_nmeaforwarder",
-        "claudemd_udphandler",
-        "claudemd_tcphandler"
-      ],
-      "relation": "implement",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md"
-    }
-  ]
+  "hyperedges": []
 }
