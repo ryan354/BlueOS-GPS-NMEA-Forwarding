@@ -1,0 +1,2341 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Core Data Models & Forwarder",
+      "x": 0,
+      "y": 0,
+      "width": 1100,
+      "height": 720,
+      "color": "1"
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder_init",
+      "type": "file",
+      "file": "graphify/obsidian/.__init__()_2.md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder_broadcast",
+      "type": "file",
+      "file": "graphify/obsidian/.broadcast().md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder_get_output_statuses",
+      "type": "file",
+      "file": "graphify/obsidian/.get_output_statuses().md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder_update_output",
+      "type": "file",
+      "file": "graphify/obsidian/.update_output().md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_addoutputrequest",
+      "type": "file",
+      "file": "graphify/obsidian/AddOutputRequest.md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_appconfig",
+      "type": "file",
+      "file": "graphify/obsidian/AppConfig.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_basemodel",
+      "type": "file",
+      "file": "graphify/obsidian/BaseModel.md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_rationale_1",
+      "type": "file",
+      "file": "graphify/obsidian/BlueOS NMEA Router Extension - FastAPI Application..md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_rationale_47",
+      "type": "file",
+      "file": "graphify/obsidian/Called by MavlinkReader on each GPS update..md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_gpsdata",
+      "type": "file",
+      "file": "graphify/obsidian/GpsData.md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_gpzdarequest",
+      "type": "file",
+      "file": "graphify/obsidian/GpzdaRequest.md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder",
+      "type": "file",
+      "file": "graphify/obsidian/NmeaForwarder.md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_outputconfig",
+      "type": "file",
+      "file": "graphify/obsidian/OutputConfig.md",
+      "x": 20,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_pollraterequest",
+      "type": "file",
+      "file": "graphify/obsidian/PollRateRequest.md",
+      "x": 220,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_rationale_26",
+      "type": "file",
+      "file": "graphify/obsidian/Push current output list to all WebSocket clients immediately..md",
+      "x": 420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_rationale_129",
+      "type": "file",
+      "file": "graphify/obsidian/Send sentences to all enabled outputs. Returns number of successful sends..md",
+      "x": 20,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_updateoutputrequest",
+      "type": "file",
+      "file": "graphify/obsidian/UpdateOutputRequest.md",
+      "x": 220,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Protocol Handlers (UDP/TCP)",
+      "x": 1180,
+      "y": 0,
+      "width": 880,
+      "height": 720,
+      "color": "2"
+    },
+    {
+      "id": "n_forwarder_tcphandler_init",
+      "type": "file",
+      "file": "graphify/obsidian/.__init__()_1.md",
+      "x": 1200,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_udphandler_init",
+      "type": "file",
+      "file": "graphify/obsidian/.__init__().md",
+      "x": 1400,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_tcphandler_connect",
+      "type": "file",
+      "file": "graphify/obsidian/._connect().md",
+      "x": 1600,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_udphandler_ensure_socket",
+      "type": "file",
+      "file": "graphify/obsidian/._ensure_socket().md",
+      "x": 1200,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder_add_output",
+      "type": "file",
+      "file": "graphify/obsidian/.add_output().md",
+      "x": 1400,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_tcphandler_close",
+      "type": "file",
+      "file": "graphify/obsidian/.close()_1.md",
+      "x": 1600,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_udphandler_close",
+      "type": "file",
+      "file": "graphify/obsidian/.close().md",
+      "x": 1200,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder_close_all",
+      "type": "file",
+      "file": "graphify/obsidian/.close_all().md",
+      "x": 1400,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_nmeaforwarder_remove_output",
+      "type": "file",
+      "file": "graphify/obsidian/.remove_output().md",
+      "x": 1600,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_tcphandler_send",
+      "type": "file",
+      "file": "graphify/obsidian/.send()_1.md",
+      "x": 1200,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_udphandler_send",
+      "type": "file",
+      "file": "graphify/obsidian/.send().md",
+      "x": 1400,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_rationale_1",
+      "type": "file",
+      "file": "graphify/obsidian/NMEA sentence forwarding to UDPTCP endpoints..md",
+      "x": 1600,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_outputstats",
+      "type": "file",
+      "file": "graphify/obsidian/OutputStats.md",
+      "x": 1200,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_tcphandler",
+      "type": "file",
+      "file": "graphify/obsidian/TcpHandler.md",
+      "x": 1400,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_forwarder_udphandler",
+      "type": "file",
+      "file": "graphify/obsidian/UdpHandler.md",
+      "x": 1600,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_forwarder_py",
+      "type": "file",
+      "file": "graphify/obsidian/forwarder.py.md",
+      "x": 1200,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "NMEA Sentence Generation",
+      "x": 2140,
+      "y": 0,
+      "width": 880,
+      "height": 720,
+      "color": "3"
+    },
+    {
+      "id": "n_nmea_rationale_32",
+      "type": "file",
+      "file": "graphify/obsidian/Convert degE7 latitude to NMEA ddmm.mmmm format and NS indicator..md",
+      "x": 2160,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_rationale_42",
+      "type": "file",
+      "file": "graphify/obsidian/Convert degE7 longitude to NMEA dddmm.mmmm format and EW indicator..md",
+      "x": 2360,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_rationale_66",
+      "type": "file",
+      "file": "graphify/obsidian/Format datetime to NMEA hhmmss.ss..md",
+      "x": 2560,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_rationale_71",
+      "type": "file",
+      "file": "graphify/obsidian/Generate a GPGGA sentence from GPS data..md",
+      "x": 2160,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_rationale_102",
+      "type": "file",
+      "file": "graphify/obsidian/Generate a GPZDA sentence from current UTC time..md",
+      "x": 2360,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_rationale_52",
+      "type": "file",
+      "file": "graphify/obsidian/Map MAVLink fix_type to NMEA GGA quality indicator..md",
+      "x": 2560,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_rationale_1",
+      "type": "file",
+      "file": "graphify/obsidian/NMEA sentence generation for GPGGA and GPZDA from MAVLink GPS data..md",
+      "x": 2160,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_rationale_24",
+      "type": "file",
+      "file": "graphify/obsidian/XOR all characters between $ and  (exclusive), return 2-char hex..md",
+      "x": 2360,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_compute_checksum",
+      "type": "file",
+      "file": "graphify/obsidian/_compute_checksum().md",
+      "x": 2560,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_deg_e7_to_nmea_lat",
+      "type": "file",
+      "file": "graphify/obsidian/_deg_e7_to_nmea_lat().md",
+      "x": 2160,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_deg_e7_to_nmea_lon",
+      "type": "file",
+      "file": "graphify/obsidian/_deg_e7_to_nmea_lon().md",
+      "x": 2360,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_fix_type_to_gga_quality",
+      "type": "file",
+      "file": "graphify/obsidian/_fix_type_to_gga_quality().md",
+      "x": 2560,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_format_utc_time",
+      "type": "file",
+      "file": "graphify/obsidian/_format_utc_time().md",
+      "x": 2160,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_generate_gpgga",
+      "type": "file",
+      "file": "graphify/obsidian/generate_gpgga().md",
+      "x": 2360,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nmea_generate_gpzda",
+      "type": "file",
+      "file": "graphify/obsidian/generate_gpzda().md",
+      "x": 2560,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_nmea_py",
+      "type": "file",
+      "file": "graphify/obsidian/nmea.py.md",
+      "x": 2160,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "MAVLink Reader & Polling",
+      "x": 3100,
+      "y": 0,
+      "width": 880,
+      "height": 620,
+      "color": "4"
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_init",
+      "type": "file",
+      "file": "graphify/obsidian/.__init__()_3.md",
+      "x": 3120,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_generate_dummy_gps",
+      "type": "file",
+      "file": "graphify/obsidian/._generate_dummy_gps().md",
+      "x": 3320,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_poll_loop",
+      "type": "file",
+      "file": "graphify/obsidian/._poll_loop().md",
+      "x": 3520,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_add_callback",
+      "type": "file",
+      "file": "graphify/obsidian/.add_callback().md",
+      "x": 3120,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_get_status",
+      "type": "file",
+      "file": "graphify/obsidian/.get_status().md",
+      "x": 3320,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_remove_callback",
+      "type": "file",
+      "file": "graphify/obsidian/.remove_callback().md",
+      "x": 3520,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_set_poll_rate",
+      "type": "file",
+      "file": "graphify/obsidian/.set_poll_rate().md",
+      "x": 3120,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_start",
+      "type": "file",
+      "file": "graphify/obsidian/.start().md",
+      "x": 3320,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader_stop",
+      "type": "file",
+      "file": "graphify/obsidian/.stop().md",
+      "x": 3520,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_rationale_1",
+      "type": "file",
+      "file": "graphify/obsidian/Async MAVLink GPS data reader via mavlink2rest..md",
+      "x": 3120,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_rationale_124",
+      "type": "file",
+      "file": "graphify/obsidian/Generate simulated GPS data that drifts slowly..md",
+      "x": 3320,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_mavlinkreader",
+      "type": "file",
+      "file": "graphify/obsidian/MavlinkReader.md",
+      "x": 3520,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_rationale_37",
+      "type": "file",
+      "file": "graphify/obsidian/Parse fix_type from mavlink2rest (can be int, string, or dict)..md",
+      "x": 3120,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mavlink_reader_parse_fix_type",
+      "type": "file",
+      "file": "graphify/obsidian/_parse_fix_type().md",
+      "x": 3320,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_mavlink_reader_py",
+      "type": "file",
+      "file": "graphify/obsidian/mavlink_reader.py.md",
+      "x": 3520,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Architecture Overview (Docs)",
+      "x": 0,
+      "y": 800,
+      "width": 880,
+      "height": 620,
+      "color": "5"
+    },
+    {
+      "id": "n_claudemd_blueos_nmea_router",
+      "type": "file",
+      "file": "graphify/obsidian/BlueOS NMEA Router Extension.md",
+      "x": 20,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_blueos",
+      "type": "file",
+      "file": "graphify/obsidian/BlueOS Platform.md",
+      "x": 220,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_callback_system",
+      "type": "file",
+      "file": "graphify/obsidian/Callback System Pattern.md",
+      "x": 420,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_gpgga",
+      "type": "file",
+      "file": "graphify/obsidian/GPGGA Sentence.md",
+      "x": 20,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_gps_raw_int",
+      "type": "file",
+      "file": "graphify/obsidian/GPS_RAW_INT MAVLink Message.md",
+      "x": 220,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_gpzda",
+      "type": "file",
+      "file": "graphify/obsidian/GPZDA Sentence.md",
+      "x": 420,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_gpsdata",
+      "type": "file",
+      "file": "graphify/obsidian/GpsData Dataclass.md",
+      "x": 20,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_mavlink",
+      "type": "file",
+      "file": "graphify/obsidian/MAVLink Protocol.md",
+      "x": 220,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_mavlinkreader",
+      "type": "file",
+      "file": "graphify/obsidian/MavlinkReader Class.md",
+      "x": 420,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_nmea_0183",
+      "type": "file",
+      "file": "graphify/obsidian/NMEA 0183 Standard.md",
+      "x": 20,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_httpx",
+      "type": "file",
+      "file": "graphify/obsidian/httpx Library.md",
+      "x": 220,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_mavlink2rest",
+      "type": "file",
+      "file": "graphify/obsidian/mavlink2rest Service.md",
+      "x": 420,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_mavlink_reader_py",
+      "type": "file",
+      "file": "graphify/obsidian/mavlink_reader.py Module.md",
+      "x": 20,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_nmea_py",
+      "type": "file",
+      "file": "graphify/obsidian/nmea.py Module.md",
+      "x": 220,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "FastAPI Endpoints & Routing",
+      "x": 1180,
+      "y": 800,
+      "width": 880,
+      "height": 620,
+      "color": "6"
+    },
+    {
+      "id": "n_main_add_output",
+      "type": "file",
+      "file": "graphify/obsidian/add_output().md",
+      "x": 1200,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_broadcast_outputs_update",
+      "type": "file",
+      "file": "graphify/obsidian/broadcast_outputs_update().md",
+      "x": 1400,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_get_config",
+      "type": "file",
+      "file": "graphify/obsidian/get_config().md",
+      "x": 1600,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_get_status",
+      "type": "file",
+      "file": "graphify/obsidian/get_status().md",
+      "x": 1200,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_lifespan",
+      "type": "file",
+      "file": "graphify/obsidian/lifespan().md",
+      "x": 1400,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_main_py",
+      "type": "file",
+      "file": "graphify/obsidian/main.py.md",
+      "x": 1600,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_on_gps_update",
+      "type": "file",
+      "file": "graphify/obsidian/on_gps_update().md",
+      "x": 1200,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_register_service",
+      "type": "file",
+      "file": "graphify/obsidian/register_service().md",
+      "x": 1400,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_remove_output",
+      "type": "file",
+      "file": "graphify/obsidian/remove_output().md",
+      "x": 1600,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_set_gpzda",
+      "type": "file",
+      "file": "graphify/obsidian/set_gpzda().md",
+      "x": 1200,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_set_poll_rate",
+      "type": "file",
+      "file": "graphify/obsidian/set_poll_rate().md",
+      "x": 1400,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_update_output",
+      "type": "file",
+      "file": "graphify/obsidian/update_output().md",
+      "x": 1600,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_websocket_endpoint",
+      "type": "file",
+      "file": "graphify/obsidian/websocket_endpoint().md",
+      "x": 1200,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Config Persistence",
+      "x": 2140,
+      "y": 800,
+      "width": 660,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_config_rationale_44",
+      "type": "file",
+      "file": "graphify/obsidian/Atomically save config to disk..md",
+      "x": 2160,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_rationale_1",
+      "type": "file",
+      "file": "graphify/obsidian/Configuration model and persistence for NMEA Router..md",
+      "x": 2360,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_rationale_34",
+      "type": "file",
+      "file": "graphify/obsidian/Load config from disk, or return defaults if not found..md",
+      "x": 2560,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_config_py",
+      "type": "file",
+      "file": "graphify/obsidian/config.py.md",
+      "x": 2160,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_load_config",
+      "type": "file",
+      "file": "graphify/obsidian/load_config().md",
+      "x": 2360,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_save_config",
+      "type": "file",
+      "file": "graphify/obsidian/save_config().md",
+      "x": 2560,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "Config Models (Docs)",
+      "x": 3100,
+      "y": 800,
+      "width": 660,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_claudemd_appconfig",
+      "type": "file",
+      "file": "graphify/obsidian/AppConfig Model.md",
+      "x": 3120,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_atomic_config",
+      "type": "file",
+      "file": "graphify/obsidian/Atomic Config Writes Pattern.md",
+      "x": 3320,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_outputconfig",
+      "type": "file",
+      "file": "graphify/obsidian/OutputConfig Model.md",
+      "x": 3520,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_pydantic",
+      "type": "file",
+      "file": "graphify/obsidian/Pydantic Library.md",
+      "x": 3120,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_rationale_atomic_writes",
+      "type": "file",
+      "file": "graphify/obsidian/Rationale Atomic Writes Prevent Corruption.md",
+      "x": 3320,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_config_py",
+      "type": "file",
+      "file": "graphify/obsidian/config.py Module.md",
+      "x": 3520,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Forwarding Architecture (Docs)",
+      "x": 0,
+      "y": 1500,
+      "width": 660,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_claudemd_nmeaforwarder",
+      "type": "file",
+      "file": "graphify/obsidian/NmeaForwarder Class.md",
+      "x": 20,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_rationale_tcp_retry",
+      "type": "file",
+      "file": "graphify/obsidian/Rationale TCP Persistent Connections with Retry.md",
+      "x": 220,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_rationale_udp_fire_forget",
+      "type": "file",
+      "file": "graphify/obsidian/Rationale UDP is Fire-and-Forget.md",
+      "x": 420,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_tcphandler",
+      "type": "file",
+      "file": "graphify/obsidian/TcpHandler Class.md",
+      "x": 20,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_udphandler",
+      "type": "file",
+      "file": "graphify/obsidian/UdpHandler Class.md",
+      "x": 220,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_forwarder_py",
+      "type": "file",
+      "file": "graphify/obsidian/forwarder.py Module.md",
+      "x": 420,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "FastAPI Framework (Docs)",
+      "x": 1180,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_claudemd_fastapi",
+      "type": "file",
+      "file": "graphify/obsidian/FastAPI Framework.md",
+      "x": 1200,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claudemd_main_py",
+      "type": "file",
+      "file": "graphify/obsidian/main.py Module.md",
+      "x": 1400,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g10",
+      "type": "group",
+      "label": "Obsidian Export Script",
+      "x": 2140,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_graphify_obsidian_py",
+      "type": "file",
+      "file": "graphify/obsidian/_graphify_obsidian.py.md",
+      "x": 2160,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g11",
+      "type": "group",
+      "label": "Extension Identity",
+      "x": 3100,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_readme_blueos_nmea_router",
+      "type": "file",
+      "file": "graphify/obsidian/BlueOS NMEA Router Extension (README).md",
+      "x": 3120,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g12",
+      "type": "group",
+      "label": "Extension Identifier",
+      "x": 0,
+      "y": 1980,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_readme_extension_identifier",
+      "type": "file",
+      "file": "graphify/obsidian/Extension Identifier ryaan354.blueos-nmea-forwarding.md",
+      "x": 20,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g13",
+      "type": "group",
+      "label": "Docker Image",
+      "x": 1180,
+      "y": 1980,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_readme_docker_image",
+      "type": "file",
+      "file": "graphify/obsidian/Docker Image ryaan354blueos-nmea-forwarding.md",
+      "x": 1200,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g14",
+      "type": "group",
+      "label": "Poll Rate Setting",
+      "x": 2140,
+      "y": 1980,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_readme_poll_rate",
+      "type": "file",
+      "file": "graphify/obsidian/Configurable Poll Rate (0.1-10 Hz).md",
+      "x": 2160,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g15",
+      "type": "group",
+      "label": "Dashboard UI",
+      "x": 3100,
+      "y": 1980,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_claudemd_index_html",
+      "type": "file",
+      "file": "graphify/obsidian/staticindex.html Dashboard.md",
+      "x": 3120,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_app_config_py_config_outputconfig",
+      "fromNode": "n_app_config_py",
+      "toNode": "n_config_outputconfig",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_config_py_config_appconfig",
+      "fromNode": "n_app_config_py",
+      "toNode": "n_config_appconfig",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_config_py_config_load_config",
+      "fromNode": "n_app_config_py",
+      "toNode": "n_config_load_config",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_config_py_config_save_config",
+      "fromNode": "n_app_config_py",
+      "toNode": "n_config_save_config",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_config_py_config_rationale_1",
+      "fromNode": "n_app_config_py",
+      "toNode": "n_config_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_config_outputconfig_basemodel",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_basemodel",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_config_appconfig",
+      "fromNode": "n_basemodel",
+      "toNode": "n_config_appconfig",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_main_addoutputrequest",
+      "fromNode": "n_basemodel",
+      "toNode": "n_main_addoutputrequest",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_main_updateoutputrequest",
+      "fromNode": "n_basemodel",
+      "toNode": "n_main_updateoutputrequest",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_main_pollraterequest",
+      "fromNode": "n_basemodel",
+      "toNode": "n_main_pollraterequest",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_main_gpzdarequest",
+      "fromNode": "n_basemodel",
+      "toNode": "n_main_gpzdarequest",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_config_appconfig_config_load_config",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_config_load_config",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_config_load_config_config_rationale_34",
+      "fromNode": "n_config_load_config",
+      "toNode": "n_config_rationale_34",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_config_save_config_config_rationale_44",
+      "fromNode": "n_config_save_config",
+      "toNode": "n_config_rationale_44",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_app_forwarder_py_forwarder_outputstats",
+      "fromNode": "n_app_forwarder_py",
+      "toNode": "n_forwarder_outputstats",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_forwarder_py_forwarder_udphandler",
+      "fromNode": "n_app_forwarder_py",
+      "toNode": "n_forwarder_udphandler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_forwarder_py_forwarder_tcphandler",
+      "fromNode": "n_app_forwarder_py",
+      "toNode": "n_forwarder_tcphandler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_forwarder_py_forwarder_nmeaforwarder",
+      "fromNode": "n_app_forwarder_py",
+      "toNode": "n_forwarder_nmeaforwarder",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_forwarder_py_forwarder_rationale_1",
+      "fromNode": "n_app_forwarder_py",
+      "toNode": "n_forwarder_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_outputstats_forwarder_udphandler_init",
+      "fromNode": "n_forwarder_outputstats",
+      "toNode": "n_forwarder_udphandler_init",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_outputstats_forwarder_tcphandler_init",
+      "fromNode": "n_forwarder_outputstats",
+      "toNode": "n_forwarder_tcphandler_init",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_udphandler_forwarder_udphandler_init",
+      "fromNode": "n_forwarder_udphandler",
+      "toNode": "n_forwarder_udphandler_init",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_udphandler_forwarder_udphandler_ensure_socket",
+      "fromNode": "n_forwarder_udphandler",
+      "toNode": "n_forwarder_udphandler_ensure_socket",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_udphandler_forwarder_udphandler_send",
+      "fromNode": "n_forwarder_udphandler",
+      "toNode": "n_forwarder_udphandler_send",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_udphandler_forwarder_udphandler_close",
+      "fromNode": "n_forwarder_udphandler",
+      "toNode": "n_forwarder_udphandler_close",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_udphandler_forwarder_nmeaforwarder_add_output",
+      "fromNode": "n_forwarder_udphandler",
+      "toNode": "n_forwarder_nmeaforwarder_add_output",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_udphandler_ensure_socket_forwarder_udphandler_send",
+      "fromNode": "n_forwarder_udphandler_ensure_socket",
+      "toNode": "n_forwarder_udphandler_send",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_udphandler_close_forwarder_tcphandler_close",
+      "fromNode": "n_forwarder_udphandler_close",
+      "toNode": "n_forwarder_tcphandler_close",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_forwarder_tcphandler_init",
+      "fromNode": "n_forwarder_tcphandler",
+      "toNode": "n_forwarder_tcphandler_init",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_forwarder_tcphandler_connect",
+      "fromNode": "n_forwarder_tcphandler",
+      "toNode": "n_forwarder_tcphandler_connect",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_forwarder_tcphandler_send",
+      "fromNode": "n_forwarder_tcphandler",
+      "toNode": "n_forwarder_tcphandler_send",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_forwarder_tcphandler_close",
+      "fromNode": "n_forwarder_tcphandler",
+      "toNode": "n_forwarder_tcphandler_close",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_forwarder_nmeaforwarder_add_output",
+      "fromNode": "n_forwarder_tcphandler",
+      "toNode": "n_forwarder_nmeaforwarder_add_output",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_connect_forwarder_tcphandler_close",
+      "fromNode": "n_forwarder_tcphandler_connect",
+      "toNode": "n_forwarder_tcphandler_close",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_connect_forwarder_tcphandler_send",
+      "fromNode": "n_forwarder_tcphandler_connect",
+      "toNode": "n_forwarder_tcphandler_send",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_close_forwarder_nmeaforwarder_remove_output",
+      "fromNode": "n_forwarder_tcphandler_close",
+      "toNode": "n_forwarder_nmeaforwarder_remove_output",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_tcphandler_close_forwarder_nmeaforwarder_close_all",
+      "fromNode": "n_forwarder_tcphandler_close",
+      "toNode": "n_forwarder_nmeaforwarder_close_all",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_forwarder_nmeaforwarder_init",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_forwarder_nmeaforwarder_init",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_forwarder_nmeaforwarder_add_output",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_forwarder_nmeaforwarder_add_output",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_forwarder_nmeaforwarder_remove_output",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_forwarder_nmeaforwarder_remove_output",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_forwarder_nmeaforwarder_update_output",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_forwarder_nmeaforwarder_update_output",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_forwarder_nmeaforwarder_broadcast",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_forwarder_nmeaforwarder_broadcast",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_forwarder_nmeaforwarder_get_output_statuses",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_forwarder_nmeaforwarder_get_output_statuses",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_forwarder_nmeaforwarder_close_all",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_forwarder_nmeaforwarder_close_all",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_broadcast_forwarder_rationale_129",
+      "fromNode": "n_forwarder_nmeaforwarder_broadcast",
+      "toNode": "n_forwarder_rationale_129",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_broadcast_outputs_update",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_broadcast_outputs_update",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_on_gps_update",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_on_gps_update",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_lifespan",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_lifespan",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_register_service",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_register_service",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_get_status",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_get_status",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_get_config",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_get_config",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_addoutputrequest",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_addoutputrequest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_add_output",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_add_output",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_remove_output",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_remove_output",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_updateoutputrequest",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_updateoutputrequest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_update_output",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_update_output",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_pollraterequest",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_pollraterequest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_set_poll_rate",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_set_poll_rate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_gpzdarequest",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_gpzdarequest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_set_gpzda",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_set_gpzda",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_websocket_endpoint",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_websocket_endpoint",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_main_py_main_rationale_1",
+      "fromNode": "n_app_main_py",
+      "toNode": "n_main_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_main_broadcast_outputs_update_main_add_output",
+      "fromNode": "n_main_broadcast_outputs_update",
+      "toNode": "n_main_add_output",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_main_broadcast_outputs_update_main_remove_output",
+      "fromNode": "n_main_broadcast_outputs_update",
+      "toNode": "n_main_remove_output",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_main_broadcast_outputs_update_main_update_output",
+      "fromNode": "n_main_broadcast_outputs_update",
+      "toNode": "n_main_update_output",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_main_broadcast_outputs_update_main_rationale_26",
+      "fromNode": "n_main_broadcast_outputs_update",
+      "toNode": "n_main_rationale_26",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_main_on_gps_update_main_get_status",
+      "fromNode": "n_main_on_gps_update",
+      "toNode": "n_main_get_status",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_main_on_gps_update_main_rationale_47",
+      "fromNode": "n_main_on_gps_update",
+      "toNode": "n_main_rationale_47",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_main_lifespan_main_add_output",
+      "fromNode": "n_main_lifespan",
+      "toNode": "n_main_add_output",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_main_get_status_main_websocket_endpoint",
+      "fromNode": "n_main_get_status",
+      "toNode": "n_main_websocket_endpoint",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_mavlink_reader_py_mavlink_reader_parse_fix_type",
+      "fromNode": "n_app_mavlink_reader_py",
+      "toNode": "n_mavlink_reader_parse_fix_type",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_mavlink_reader_py_mavlink_reader_mavlinkreader",
+      "fromNode": "n_app_mavlink_reader_py",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_mavlink_reader_py_mavlink_reader_rationale_1",
+      "fromNode": "n_app_mavlink_reader_py",
+      "toNode": "n_mavlink_reader_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_parse_fix_type_mavlink_reader_mavlinkreader_poll_loop",
+      "fromNode": "n_mavlink_reader_parse_fix_type",
+      "toNode": "n_mavlink_reader_mavlinkreader_poll_loop",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_parse_fix_type_mavlink_reader_rationale_37",
+      "fromNode": "n_mavlink_reader_parse_fix_type",
+      "toNode": "n_mavlink_reader_rationale_37",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_init",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_init",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_add_callback",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_add_callback",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_remove_callback",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_remove_callback",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_start",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_start",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_stop",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_stop",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_set_poll_rate",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_set_poll_rate",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_get_status",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_get_status",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_generate_dummy_gps",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_generate_dummy_gps",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_mavlink_reader_mavlinkreader_poll_loop",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_mavlink_reader_mavlinkreader_poll_loop",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_start_mavlink_reader_mavlinkreader_poll_loop",
+      "fromNode": "n_mavlink_reader_mavlinkreader_start",
+      "toNode": "n_mavlink_reader_mavlinkreader_poll_loop",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_generate_dummy_gps_mavlink_reader_mavlinkreader_poll_loop",
+      "fromNode": "n_mavlink_reader_mavlinkreader_generate_dummy_gps",
+      "toNode": "n_mavlink_reader_mavlinkreader_poll_loop",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_generate_dummy_gps_mavlink_reader_rationale_124",
+      "fromNode": "n_mavlink_reader_mavlinkreader_generate_dummy_gps",
+      "toNode": "n_mavlink_reader_rationale_124",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_gpsdata",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_gpsdata",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_compute_checksum",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_compute_checksum",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_deg_e7_to_nmea_lat",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_deg_e7_to_nmea_lat",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_deg_e7_to_nmea_lon",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_deg_e7_to_nmea_lon",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_fix_type_to_gga_quality",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_fix_type_to_gga_quality",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_format_utc_time",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_format_utc_time",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_generate_gpgga",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_generate_gpgga",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_generate_gpzda",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_generate_gpzda",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_nmea_py_nmea_rationale_1",
+      "fromNode": "n_app_nmea_py",
+      "toNode": "n_nmea_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_compute_checksum_nmea_generate_gpgga",
+      "fromNode": "n_nmea_compute_checksum",
+      "toNode": "n_nmea_generate_gpgga",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_compute_checksum_nmea_generate_gpzda",
+      "fromNode": "n_nmea_compute_checksum",
+      "toNode": "n_nmea_generate_gpzda",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_compute_checksum_nmea_rationale_24",
+      "fromNode": "n_nmea_compute_checksum",
+      "toNode": "n_nmea_rationale_24",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_deg_e7_to_nmea_lat_nmea_generate_gpgga",
+      "fromNode": "n_nmea_deg_e7_to_nmea_lat",
+      "toNode": "n_nmea_generate_gpgga",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_deg_e7_to_nmea_lat_nmea_rationale_32",
+      "fromNode": "n_nmea_deg_e7_to_nmea_lat",
+      "toNode": "n_nmea_rationale_32",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_deg_e7_to_nmea_lon_nmea_generate_gpgga",
+      "fromNode": "n_nmea_deg_e7_to_nmea_lon",
+      "toNode": "n_nmea_generate_gpgga",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_deg_e7_to_nmea_lon_nmea_rationale_42",
+      "fromNode": "n_nmea_deg_e7_to_nmea_lon",
+      "toNode": "n_nmea_rationale_42",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_fix_type_to_gga_quality_nmea_generate_gpgga",
+      "fromNode": "n_nmea_fix_type_to_gga_quality",
+      "toNode": "n_nmea_generate_gpgga",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_fix_type_to_gga_quality_nmea_rationale_52",
+      "fromNode": "n_nmea_fix_type_to_gga_quality",
+      "toNode": "n_nmea_rationale_52",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_format_utc_time_nmea_generate_gpgga",
+      "fromNode": "n_nmea_format_utc_time",
+      "toNode": "n_nmea_generate_gpgga",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_format_utc_time_nmea_generate_gpzda",
+      "fromNode": "n_nmea_format_utc_time",
+      "toNode": "n_nmea_generate_gpzda",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_format_utc_time_nmea_rationale_66",
+      "fromNode": "n_nmea_format_utc_time",
+      "toNode": "n_nmea_rationale_66",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_generate_gpgga_nmea_rationale_71",
+      "fromNode": "n_nmea_generate_gpgga",
+      "toNode": "n_nmea_rationale_71",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_nmea_generate_gpzda_nmea_rationale_102",
+      "fromNode": "n_nmea_generate_gpzda",
+      "toNode": "n_nmea_rationale_102",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_blueos_nmea_router_claudemd_mavlink",
+      "fromNode": "n_claudemd_blueos_nmea_router",
+      "toNode": "n_claudemd_mavlink",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_blueos_nmea_router_claudemd_nmea_0183",
+      "fromNode": "n_claudemd_blueos_nmea_router",
+      "toNode": "n_claudemd_nmea_0183",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_blueos_nmea_router_claudemd_blueos",
+      "fromNode": "n_claudemd_blueos_nmea_router",
+      "toNode": "n_claudemd_blueos",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_mavlink2rest_claudemd_mavlinkreader",
+      "fromNode": "n_claudemd_mavlink2rest",
+      "toNode": "n_claudemd_mavlinkreader",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_gpgga_claudemd_gpsdata",
+      "fromNode": "n_claudemd_gpgga",
+      "toNode": "n_claudemd_gpsdata",
+      "label": "shares_data_with [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_gpgga_claudemd_nmea_py",
+      "fromNode": "n_claudemd_gpgga",
+      "toNode": "n_claudemd_nmea_py",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_gpzda_claudemd_gpsdata",
+      "fromNode": "n_claudemd_gpzda",
+      "toNode": "n_claudemd_gpsdata",
+      "label": "shares_data_with [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_gpzda_claudemd_nmea_py",
+      "fromNode": "n_claudemd_gpzda",
+      "toNode": "n_claudemd_nmea_py",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_main_py_claudemd_fastapi",
+      "fromNode": "n_claudemd_main_py",
+      "toNode": "n_claudemd_fastapi",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_mavlink_reader_py_claudemd_mavlinkreader",
+      "fromNode": "n_claudemd_mavlink_reader_py",
+      "toNode": "n_claudemd_mavlinkreader",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_nmea_py_claudemd_gpsdata",
+      "fromNode": "n_claudemd_nmea_py",
+      "toNode": "n_claudemd_gpsdata",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_forwarder_py_claudemd_nmeaforwarder",
+      "fromNode": "n_claudemd_forwarder_py",
+      "toNode": "n_claudemd_nmeaforwarder",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_forwarder_py_claudemd_udphandler",
+      "fromNode": "n_claudemd_forwarder_py",
+      "toNode": "n_claudemd_udphandler",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_forwarder_py_claudemd_tcphandler",
+      "fromNode": "n_claudemd_forwarder_py",
+      "toNode": "n_claudemd_tcphandler",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_config_py_claudemd_outputconfig",
+      "fromNode": "n_claudemd_config_py",
+      "toNode": "n_claudemd_outputconfig",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_config_py_claudemd_appconfig",
+      "fromNode": "n_claudemd_config_py",
+      "toNode": "n_claudemd_appconfig",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_config_py_claudemd_pydantic",
+      "fromNode": "n_claudemd_config_py",
+      "toNode": "n_claudemd_pydantic",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_config_py_claudemd_atomic_config",
+      "fromNode": "n_claudemd_config_py",
+      "toNode": "n_claudemd_atomic_config",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_mavlinkreader_claudemd_httpx",
+      "fromNode": "n_claudemd_mavlinkreader",
+      "toNode": "n_claudemd_httpx",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_mavlinkreader_claudemd_gpsdata",
+      "fromNode": "n_claudemd_mavlinkreader",
+      "toNode": "n_claudemd_gpsdata",
+      "label": "shares_data_with [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_mavlinkreader_claudemd_callback_system",
+      "fromNode": "n_claudemd_mavlinkreader",
+      "toNode": "n_claudemd_callback_system",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_nmeaforwarder_claudemd_udphandler",
+      "fromNode": "n_claudemd_nmeaforwarder",
+      "toNode": "n_claudemd_udphandler",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_nmeaforwarder_claudemd_tcphandler",
+      "fromNode": "n_claudemd_nmeaforwarder",
+      "toNode": "n_claudemd_tcphandler",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_udphandler_claudemd_rationale_udp_fire_forget",
+      "fromNode": "n_claudemd_udphandler",
+      "toNode": "n_claudemd_rationale_udp_fire_forget",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_tcphandler_claudemd_rationale_tcp_retry",
+      "fromNode": "n_claudemd_tcphandler",
+      "toNode": "n_claudemd_rationale_tcp_retry",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_atomic_config_claudemd_rationale_atomic_writes",
+      "fromNode": "n_claudemd_atomic_config",
+      "toNode": "n_claudemd_rationale_atomic_writes",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_mavlinkreader_claudemd_gps_raw_int",
+      "fromNode": "n_claudemd_mavlinkreader",
+      "toNode": "n_claudemd_gps_raw_int",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_claudemd_nmeaforwarder_claudemd_callback_system",
+      "fromNode": "n_claudemd_nmeaforwarder",
+      "toNode": "n_claudemd_callback_system",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_config_outputconfig_forwarder_outputstats",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_forwarder_outputstats",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_forwarder_udphandler",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_forwarder_udphandler",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_forwarder_tcphandler",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_forwarder_tcphandler",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_forwarder_nmeaforwarder",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_forwarder_nmeaforwarder",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_forwarder_rationale_1",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_forwarder_rationale_1",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_forwarder_rationale_129",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_forwarder_rationale_129",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_main_addoutputrequest",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_main_addoutputrequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_main_updateoutputrequest",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_main_updateoutputrequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_main_pollraterequest",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_main_pollraterequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_main_gpzdarequest",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_main_gpzdarequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_main_rationale_1",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_main_rationale_1",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_main_rationale_26",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_main_rationale_26",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_outputconfig_main_rationale_47",
+      "fromNode": "n_config_outputconfig",
+      "toNode": "n_main_rationale_47",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_appconfig_main_addoutputrequest",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_main_addoutputrequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_appconfig_main_updateoutputrequest",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_main_updateoutputrequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_appconfig_main_pollraterequest",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_main_pollraterequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_appconfig_main_gpzdarequest",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_main_gpzdarequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_appconfig_main_rationale_1",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_main_rationale_1",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_appconfig_main_rationale_26",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_main_rationale_26",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_config_appconfig_main_rationale_47",
+      "fromNode": "n_config_appconfig",
+      "toNode": "n_main_rationale_47",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_main_addoutputrequest",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_main_addoutputrequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_main_updateoutputrequest",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_main_updateoutputrequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_main_pollraterequest",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_main_pollraterequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_main_gpzdarequest",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_main_gpzdarequest",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_main_rationale_1",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_main_rationale_1",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_main_rationale_26",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_main_rationale_26",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_forwarder_nmeaforwarder_main_rationale_47",
+      "fromNode": "n_forwarder_nmeaforwarder",
+      "toNode": "n_main_rationale_47",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_addoutputrequest_mavlink_reader_mavlinkreader",
+      "fromNode": "n_main_addoutputrequest",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_addoutputrequest_nmea_gpsdata",
+      "fromNode": "n_main_addoutputrequest",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_updateoutputrequest_mavlink_reader_mavlinkreader",
+      "fromNode": "n_main_updateoutputrequest",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_updateoutputrequest_nmea_gpsdata",
+      "fromNode": "n_main_updateoutputrequest",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_pollraterequest_mavlink_reader_mavlinkreader",
+      "fromNode": "n_main_pollraterequest",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_pollraterequest_nmea_gpsdata",
+      "fromNode": "n_main_pollraterequest",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_gpzdarequest_mavlink_reader_mavlinkreader",
+      "fromNode": "n_main_gpzdarequest",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_gpzdarequest_nmea_gpsdata",
+      "fromNode": "n_main_gpzdarequest",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_rationale_1_mavlink_reader_mavlinkreader",
+      "fromNode": "n_main_rationale_1",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_rationale_1_nmea_gpsdata",
+      "fromNode": "n_main_rationale_1",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_rationale_26_mavlink_reader_mavlinkreader",
+      "fromNode": "n_main_rationale_26",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_rationale_26_nmea_gpsdata",
+      "fromNode": "n_main_rationale_26",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_rationale_47_mavlink_reader_mavlinkreader",
+      "fromNode": "n_main_rationale_47",
+      "toNode": "n_mavlink_reader_mavlinkreader",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_main_rationale_47_nmea_gpsdata",
+      "fromNode": "n_main_rationale_47",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_mavlink_reader_mavlinkreader_nmea_gpsdata",
+      "fromNode": "n_mavlink_reader_mavlinkreader",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_mavlink_reader_rationale_1_nmea_gpsdata",
+      "fromNode": "n_mavlink_reader_rationale_1",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_mavlink_reader_rationale_37_nmea_gpsdata",
+      "fromNode": "n_mavlink_reader_rationale_37",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_mavlink_reader_rationale_124_nmea_gpsdata",
+      "fromNode": "n_mavlink_reader_rationale_124",
+      "toNode": "n_nmea_gpsdata",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_claudemd_mavlink_claudemd_gps_raw_int",
+      "fromNode": "n_claudemd_mavlink",
+      "toNode": "n_claudemd_gps_raw_int",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_claudemd_mavlink_claudemd_mavlink2rest",
+      "fromNode": "n_claudemd_mavlink",
+      "toNode": "n_claudemd_mavlink2rest",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_claudemd_nmea_0183_claudemd_gpgga",
+      "fromNode": "n_claudemd_nmea_0183",
+      "toNode": "n_claudemd_gpgga",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_claudemd_nmea_0183_claudemd_gpzda",
+      "fromNode": "n_claudemd_nmea_0183",
+      "toNode": "n_claudemd_gpzda",
+      "label": "conceptually_related_to [INFERRED]"
+    }
+  ]
+}

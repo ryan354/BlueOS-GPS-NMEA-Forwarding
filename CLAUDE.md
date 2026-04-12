@@ -50,3 +50,12 @@ MAVLink (mavlink2rest :6040)
 - **Atomic config writes**: config.py uses temp file + os.replace to prevent corruption
 - **Protocol handlers**: UDP is fire-and-forget; TCP maintains persistent connections with retry logic
 - **BlueOS integration**: Docker labels in Dockerfile define extension metadata for the BlueOS Extension Manager; service registration via `/register_service` endpoint on startup
+
+## graphify
+
+This project has a graphify knowledge graph at graphify-out/.
+
+Rules:
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- After modifying code files in this session, run `python3 -c "from graphify.watch import _rebuild_code; from pathlib import Path; _rebuild_code(Path('.'))"` to keep the graph current
